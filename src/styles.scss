@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(~bootstrap/dist/css/bootstrap.min.css);
+@import url(~font-awesome/css/font-awesome.min.css);
+
+body{
+  background-color: #ced7d8;
+  background-image: url("https://www.transparenttextures.com/patterns/grey-jean.png");
+}
