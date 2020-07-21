@@ -1,20 +1,23 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Product} from '../add-product/model/product';
 import {Observable} from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ProductService {
-  private BASE_URL = 'http://localhost:8080/api/products';
+    private BASE_URL = 'http://localhost:8080/api/products';
 
-  constructor(private httpClient: HttpClient){}
+    constructor(private httpClient: HttpClient) {
+    }
 
-  getProducts(): Observable<Product[]>{
-    return this.httpClient.get<Product[]>(this.BASE_URL);
-  }
+    getProducts(): Observable<Product[]> {
+        return this.httpClient.get<Product[]>(this.BASE_URL);
+    }
 
-
+    createProduct(product: Product){
+        return this.httpClient.post<Product>(this.BASE_URL, product);
+    }
 
 }
