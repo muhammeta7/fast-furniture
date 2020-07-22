@@ -1,1 +1,26 @@
-<p>inventory works!</p>
+<div class="col-md-6">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>abbreviation</th>
+            <th>location</th>
+            <th>dimension(LWH)</th>
+            <th>category</th>
+            <th>quantity</th>
+            <th>description</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of inventory">
+                <td>{{product.name}}</td>
+                <td>{{product.abbreviation}}</td>
+                <td>{{product.location}}</td>
+                <td>{{product.length}} x {{product.width}} x {{product.depth}}</td>
+                <td>{{product.category}}</td>
+                <td>{{product.qty}}</td>
+                <td>{{product.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
