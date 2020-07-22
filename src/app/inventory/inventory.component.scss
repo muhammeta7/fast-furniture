@@ -1,5 +1,29 @@
 .container-fluid{
-  margin: 0 auto;
-  //background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
-  //background-color: #ffc13b;
+  margin: 3% auto;
+  padding: 3%;
+  background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+  background-color: rgba(255, 110, 64, 0.76);
+  width: 80%;
 }
+h4{
+  text-align: center;
+  margin: 1% auto;
+  color: #ffc13b;
+  padding: 2%;
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+  background-color: #1e3d59;
+  width: 30%;
+}
+
+thead{
+  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+  background-color: #1e3d59;
+  color: #ffc13b;
+}
+
+tbody{
+  background: #f5e6e1;
+  color: #1e3d59;
+  font-weight: bold;
+}
+
