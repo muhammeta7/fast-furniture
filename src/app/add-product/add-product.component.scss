@@ -1,16 +1,30 @@
-.container-fluid{
+.flex-container{
   margin: 5% auto;
-  padding: 4% 4%;
+  padding: 4% 5%;
   background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
   background-color: #1e3d59;
+  width: 80%;
 }
-
 
 .create-button{
-  background-color: #ffc13b;
-  margin-top: 5%;
+  background-color: #ff6e40;
+  background-image: url("https://www.transparenttextures.com/patterns/grey-jean.png");
+  margin-top: 10%;
+  color: white;
+  border: #ffc13b 2px solid;
 }
 
-.form-control{
-  margin: 1% 0;
+.row{
+  margin: 0 auto;
+  width: 90%;
 }
+
+#abbr, #location, #length, #width{
+  margin-right: 2%;
+}
+
+label{
+  color: #ffc13b;
+  margin-bottom: 0.25rem;
+}
+
