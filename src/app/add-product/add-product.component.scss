@@ -1,7 +1,16 @@
-.container-fluid, .row{
-  margin: 0 auto;
+.container-fluid{
+  margin: 5% auto;
+  padding: 4% 4%;
+  background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+  background-color: #1e3d59;
 }
 
-.sign-up{
-  margin: 0 auto;
+
+.create-button{
+  background-color: #ffc13b;
+  margin-top: 5%;
+}
+
+.form-control{
+  margin: 1% 0;
 }
