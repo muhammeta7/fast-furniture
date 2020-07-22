@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-6 signup">
+
             <div class="form_container">
                 <form
                         name="form"
@@ -9,7 +9,6 @@
                         novalidate
                         class="signup-form"
                 >
-                    <!-- Name -->
                     <div class="input-group user_info">
                         <input
                                 type="text"
@@ -21,7 +20,23 @@
                                 #name="ngModel"
                                 [ngClass]="{ 'is-invalid': f.submitted && name.invalid }"
                                 required
-                                minlength="3"
+                                minlength="2"
+                                maxlength="32"
+                        />
+                    </div>
+                    <div class="input-group user_info">
+                        <input
+                                type="text"
+                                id="category"
+                                name="category"
+                                class="form-control"
+                                placeholder="Category"
+                                [(ngModel)]="product.category"
+                                #category="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && category.invalid }"
+                                required
+                                minlength="2"
+                                maxlength="32"
                         />
                     </div>
                     <div class="input-group user_info">
@@ -35,8 +50,71 @@
                                 #abbr="ngModel"
                                 [ngClass]="{ 'is-invalid': f.submitted && abbr.invalid }"
                                 required
-                                minlength="3"
+                                minlength="2"
+                                maxlength="5"
                         />
+                        <input
+                                type="text"
+                                id="location"
+                                name="location"
+                                class="form-control"
+                                placeholder="Location"
+                                [(ngModel)]="product.location"
+                                #location="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && location.invalid }"
+                                required
+                                minlength="3"
+                                maxlength="3"
+                        />
+                        <input
+                                type="number"
+                                id="qty"
+                                name="qty"
+                                class="form-control"
+                                placeholder="Quantity"
+                                [(ngModel)]="product.qty"
+                                #qty="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && qty.invalid }"
+                                required
+                        />
+                    </div>
+                    <div class="input-group user_info">
+                        <input
+                                type="number"
+                                id="length"
+                                name="length"
+                                class="form-control"
+                                placeholder="Length"
+                                [(ngModel)]="product.length"
+                                #length="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && length.invalid }"
+                                required
+                        />
+                        <input
+                                type="number"
+                                id="width"
+                                name="width"
+                                class="form-control"
+                                placeholder="Width"
+                                [(ngModel)]="product.width"
+                                #width="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && width.invalid }"
+                                required
+                        />
+                        <input
+                                type="number"
+                                id="depth"
+                                name="depth"
+                                class="form-control"
+                                placeholder="Depth"
+                                [(ngModel)]="product.depth"
+                                #depth="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && depth.invalid }"
+                                required
+                        />
+                    </div>
+                    <div class="input-group user_info">
+                            <textarea class="form-control" placeholder="Product Description"></textarea>
                     </div>
                     <div class="d-flex justify-content-center">
                         <div class="d-flex justify-content-center login_container">
@@ -53,4 +131,4 @@
             </div>
         </div>
     </div>
-</div>
+
