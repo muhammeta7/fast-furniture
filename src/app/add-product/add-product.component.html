@@ -1,27 +1,20 @@
 <div class="flex-container">
-    <h4>Add New Product to Inventory</h4>
+    <h1 class="text-center text-white display-4">Add New Product</h1>
     <div class="form_container">
         <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createProduct()" novalidate class="product">
 
             <div class="row">
-                <label for="name" class="inline-label">Product Name</label>
-                <input type="text" id="name" name="name" class="form-control" [(ngModel)]="product.name" #name="ngModel"
-                       [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2" maxlength="32"/>
-            </div>
-
-            <div class="row">
-                <label for="category">Category</label>
-                <input type="text" id="category" name="category" class="form-control" [(ngModel)]="product.category"
-                       #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required
-                       minlength="2" maxlength="32"/>
-            </div>
-
-            <div class="row">
-                <label for="description">Product Description</label>
-                <textarea class="form-control" id="description" name="description" [(ngModel)]="product.description"
-                          #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
-                          required minlength="2" maxlength="300">
-                            </textarea>
+                <div class="col-sm-8">
+                    <label for="name">Product Name</label>
+                    <input type="text" id="name" name="name" class="form-control" [(ngModel)]="product.name" #name="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2" maxlength="32"/>
+                </div>
+                <div class="col-sm-4">
+                    <label for="category">Category</label>
+                    <input type="text" id="category" name="category" class="form-control" [(ngModel)]="product.category"
+                           #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required
+                           minlength="2" maxlength="32"/>
+                </div>
             </div>
 
             <div class="row">
@@ -70,6 +63,16 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-sm-12">
+                    <label for="description">Product Description</label>
+                    <textarea class="form-control" id="description" name="description" [(ngModel)]="product.description"
+                              #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
+                              required minlength="2" maxlength="300">
+                            </textarea>
+                </div>
+            </div>
+
             <div class="d-flex justify-content-center">
                 <div class="d-flex justify-content-center login_container">
                     <button type="submit" class="btn create-button" [disabled]="!f.form.valid">
@@ -79,6 +82,10 @@
             </div>
 
         </form>
+        <div>
+            <app-upload-images></app-upload-images>
+        </div>
+
     </div>
 </div>
 
