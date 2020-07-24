@@ -1,92 +1,41 @@
 <div class="flex-container">
     <h4>Add New Product to Inventory</h4>
     <div class="form_container">
-        <form
-                name="form"
-                #f="ngForm"
-                (ngSubmit)="f.form.valid && createProduct()"
-                novalidate
-                class="product"
-        >
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createProduct()" novalidate class="product">
 
             <div class="row">
                 <label for="name" class="inline-label">Product Name</label>
-                <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="form-control"
-                        [(ngModel)]="product.name"
-                        #name="ngModel"
-                        [ngClass]="{ 'is-invalid': f.submitted && name.invalid }"
-                        required
-                        minlength="2"
-                        maxlength="32"
-                />
-
+                <input type="text" id="name" name="name" class="form-control" [(ngModel)]="product.name" #name="ngModel"
+                       [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2" maxlength="32"/>
             </div>
 
             <div class="row">
                 <label for="category">Category</label>
-                <input
-                        type="text"
-                        id="category"
-                        name="category"
-                        class="form-control"
-                        [(ngModel)]="product.category"
-                        #category="ngModel"
-                        [ngClass]="{ 'is-invalid': f.submitted && category.invalid }"
-                        required
-                        minlength="2"
-                        maxlength="32"
-                />
+                <input type="text" id="category" name="category" class="form-control" [(ngModel)]="product.category"
+                       #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required
+                       minlength="2" maxlength="32"/>
             </div>
 
             <div class="row">
                 <label for="description">Product Description</label>
-                <textarea class="form-control"
-                          id="description"
-                          name="description"
-                          [(ngModel)]="product.description"
-                          #description="ngModel"
-                          [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
-                          required
-                          minlength="2"
-                          maxlength="300"
-                >
+                <textarea class="form-control" id="description" name="description" [(ngModel)]="product.description"
+                          #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
+                          required minlength="2" maxlength="300">
                             </textarea>
             </div>
 
             <div class="row">
                 <div class="col-sm-4">
                     <label for="abbr">Abbreviation</label>
-                    <input
-                            type="text"
-                            id="abbr"
-                            name="abbr"
-                            class="form-control"
-                            [(ngModel)]="product.abbreviation"
-                            #abbr="ngModel"
-                            [ngClass]="{ 'is-invalid': f.submitted && abbr.invalid }"
-                            required
-                            minlength="2"
-                            maxlength="5"
-                    />
+                    <input type="text" id="abbr" name="abbr" class="form-control" [(ngModel)]="product.abbreviation"
+                           #abbr="ngModel" [ngClass]="{ 'is-invalid': f.submitted && abbr.invalid }" required
+                           minlength="2" maxlength="5"/>
                 </div>
                 <div class="col-sm-4">
                     <label for="location">Location</label>
-                    <input
-                            type="text"
-                            id="location"
-                            name="location"
-                            class="form-control"
-                            [(ngModel)]="product.location"
-                            #location="ngModel"
-                            [ngClass]="{ 'is-invalid': f.submitted && location.invalid }"
-                            required
-                            minlength="3"
-                            maxlength="3"
-                    />
+                    <input type="text" id="location" name="location" class="form-control" [(ngModel)]="product.location"
+                           #location="ngModel" [ngClass]="{ 'is-invalid': f.submitted && location.invalid }" required
+                           minlength="3" maxlength="3"/>
                 </div>
                 <div class="col-sm-4">
                     <label for="qty">Quantity</label>
@@ -106,52 +55,24 @@
             <div class="row">
                 <div class="col-sm-4">
                     <label for="length">Length</label>
-                    <input
-                            type="number"
-                            id="length"
-                            name="length"
-                            class="form-control"
-                            [(ngModel)]="product.length"
-                            #length="ngModel"
-                            [ngClass]="{ 'is-invalid': f.submitted && length.invalid }"
-                            required
-                    />
+                    <input type="number" id="length" name="length" class="form-control" [(ngModel)]="product.length"
+                           #length="ngModel" [ngClass]="{ 'is-invalid': f.submitted && length.invalid }" required/>
                 </div>
                 <div class="col-sm-4">
                     <label for="width">Width</label>
-                    <input
-                            type="number"
-                            id="width"
-                            name="width"
-                            class="form-control"
-                            [(ngModel)]="product.width"
-                            #width="ngModel"
-                            [ngClass]="{ 'is-invalid': f.submitted && width.invalid }"
-                            required
-                    />
+                    <input type="number" id="width" name="width" class="form-control" [(ngModel)]="product.width"
+                           #width="ngModel" [ngClass]="{ 'is-invalid': f.submitted && width.invalid }" required/>
                 </div>
                 <div class="col-sm-4">
                     <label for="depth">Depth</label>
-                    <input
-                            type="number"
-                            id="depth"
-                            name="depth"
-                            class="form-control"
-                            [(ngModel)]="product.depth"
-                            #depth="ngModel"
-                            [ngClass]="{ 'is-invalid': f.submitted && depth.invalid }"
-                            required
-                    />
+                    <input type="number" id="depth" name="depth" class="form-control" [(ngModel)]="product.depth"
+                           #depth="ngModel" [ngClass]="{ 'is-invalid': f.submitted && depth.invalid }" required/>
                 </div>
             </div>
 
             <div class="d-flex justify-content-center">
                 <div class="d-flex justify-content-center login_container">
-                    <button
-                            type="submit"
-                            class="btn create-button"
-                            [disabled]="!f.form.valid"
-                    >
+                    <button type="submit" class="btn create-button" [disabled]="!f.form.valid">
                         Add Product<span> <i class="fa fa-hand-pointer-o ml-2"></i></span>
                     </button>
                 </div>
