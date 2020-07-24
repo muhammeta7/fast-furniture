@@ -8,13 +8,15 @@ import {NavigationComponent} from './navigation/navigation.component';
 import {InventoryComponent} from './inventory/inventory.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import { UploadImagesComponent } from './upload-images/upload-images.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         AddProductComponent,
         NavigationComponent,
-        InventoryComponent
+        InventoryComponent,
+        UploadImagesComponent
     ],
     imports: [
         BrowserModule,
