@@ -1,11 +1,7 @@
-h4{
-  text-align: center;
-  margin: 1% auto;
-  color: #ffc13b;
-  padding: 2%;
-  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
-  background-color: #1e3d59;
-  width: 40%;
+h3{
+  padding-bottom: 2%;
+  color: white;
+  font-size: 2.2rem;
 }
 
 .flex-container{
@@ -21,6 +17,7 @@ h4{
   background-color: #1e3d59;
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
   color: white;
+  margin-top: 8%;
 }
 
 .row{
@@ -34,9 +31,10 @@ h4{
 }
 
 label{
-  color: #1e3d59;
-  font-weight: bold;
+  color: white;
+  //font-weight: bold;
   margin-top: .3rem;
+  font-size: 1.2rem;
 }
 
 
