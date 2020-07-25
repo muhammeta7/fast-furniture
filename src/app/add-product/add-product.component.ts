@@ -39,8 +39,6 @@ export class AddProductComponent implements OnInit {
                 }else{
                     this.inventory.push(res);
                     this.router.navigate(['/products']);
-                    console.log('Did work!');
-                    console.log(res);
                 }
             },
             (error) => {
