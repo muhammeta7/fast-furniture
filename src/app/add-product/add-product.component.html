@@ -1,17 +1,20 @@
 <div class="flex-container">
-    <h1 class="text-center text-white display-4">Add New Product</h1>
+    <h3 class="text-center text-white display-4">Add New Product</h3>
     <div class="form_container">
         <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createProduct()" novalidate class="product">
 
             <div class="row">
                 <div class="col-sm-8">
                     <label for="name">Product Name</label>
-                    <input type="text" id="name" name="name" class="form-control rounded-pill" [(ngModel)]="product.name" #name="ngModel"
-                           [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2" maxlength="32"/>
+                    <input type="text" id="name" name="name" class="form-control rounded-pill"
+                           [(ngModel)]="product.name" #name="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2"
+                           maxlength="32"/>
                 </div>
                 <div class="col-sm-4">
                     <label for="category">Category</label>
-                    <input type="text" id="category" name="category" class="form-control rounded-pill" [(ngModel)]="product.category"
+                    <input type="text" id="category" name="category" class="form-control rounded-pill"
+                           [(ngModel)]="product.category"
                            #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required
                            minlength="2" maxlength="32"/>
                 </div>
@@ -20,45 +23,42 @@
             <div class="row">
                 <div class="col-sm-4">
                     <label for="abbr">Abbreviation</label>
-                    <input type="text" id="abbr" name="abbr" class="form-control rounded-pill" [(ngModel)]="product.abbreviation"
+                    <input type="text" id="abbr" name="abbr" class="form-control rounded-pill"
+                           [(ngModel)]="product.abbreviation"
                            #abbr="ngModel" [ngClass]="{ 'is-invalid': f.submitted && abbr.invalid }" required
                            minlength="2" maxlength="5"/>
                 </div>
                 <div class="col-sm-4">
                     <label for="location">Location</label>
-                    <input type="text" id="location" name="location" class="form-control rounded-pill" [(ngModel)]="product.location"
+                    <input type="text" id="location" name="location" class="form-control rounded-pill"
+                           [(ngModel)]="product.location"
                            #location="ngModel" [ngClass]="{ 'is-invalid': f.submitted && location.invalid }" required
                            minlength="3" maxlength="3"/>
                 </div>
                 <div class="col-sm-4">
                     <label for="qty">Quantity</label>
-                    <input
-                            type="number"
-                            id="qty"
-                            name="qty"
-                            class="form-control rounded-pill"
-                            [(ngModel)]="product.qty"
-                            #qty="ngModel"
-                            [ngClass]="{ 'is-invalid': f.submitted && qty.invalid }"
-                            required
-                    />
+                    <input type="number" id="qty" name="qty" class="form-control rounded-pill" [(ngModel)]="product.qty"
+                           #qty="ngModel" [ngClass]="{ 'is-invalid': f.submitted && qty.invalid }" required/>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-4">
                     <label for="length">Length</label>
-                    <input type="number" id="length" name="length" class="form-control rounded-pill" [(ngModel)]="product.length"
+                    <input type="number" id="length" name="length" class="form-control rounded-pill"
+                           [(ngModel)]="product.length"
                            #length="ngModel" [ngClass]="{ 'is-invalid': f.submitted && length.invalid }" required/>
                 </div>
                 <div class="col-sm-4">
                     <label for="width">Width</label>
-                    <input type="number" id="width" name="width" class="form-control rounded-pill" [(ngModel)]="product.width"
+                    <input type="number" id="width" name="width" class="form-control rounded-pill"
+                           [(ngModel)]="product.width"
                            #width="ngModel" [ngClass]="{ 'is-invalid': f.submitted && width.invalid }" required/>
                 </div>
                 <div class="col-sm-4">
                     <label for="depth">Depth</label>
-                    <input type="number" id="depth" name="depth" class="form-control rounded-pill" [(ngModel)]="product.depth"
+                    <input type="number" id="depth" name="depth" class="form-control rounded-pill"
+                           [(ngModel)]="product.depth"
                            #depth="ngModel" [ngClass]="{ 'is-invalid': f.submitted && depth.invalid }" required/>
                 </div>
             </div>
@@ -66,7 +66,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <label for="description">Product Description</label>
-                    <textarea class="form-control rounded-pill" id="description" name="description" [(ngModel)]="product.description"
+                    <textarea class="form-control rounded-pill" id="description" name="description"
+                              [(ngModel)]="product.description"
                               #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
                               required minlength="2" maxlength="300">
                             </textarea>
@@ -74,18 +75,18 @@
             </div>
 
             <div class="d-flex justify-content-center">
-                <div class="d-flex justify-content-center login_container">
-                    <button type="submit" class="btn rounded-pill create-button" [disabled]="!f.form.valid">
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-lg create-button" [disabled]="!f.form.valid">
                         Add Product<span> <i class="fa fa-hand-pointer-o ml-2"></i></span>
                     </button>
                 </div>
             </div>
 
         </form>
-        <div>
-            <app-upload-images></app-upload-images>
-        </div>
 
+<!--        <div>-->
+<!--            <app-upload-images></app-upload-images>-->
+<!--        </div>-->
     </div>
 </div>
 
