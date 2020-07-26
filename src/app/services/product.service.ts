@@ -9,8 +9,7 @@ import {Observable} from 'rxjs';
 export class ProductService {
     private BASE_URL = 'http://localhost:8080/api/products';
 
-    constructor(private httpClient: HttpClient) {
-    }
+    constructor(private httpClient: HttpClient) {}
 
     getProducts(): Observable<Product[]> {
         return this.httpClient.get<Product[]>(this.BASE_URL);
@@ -18,6 +17,10 @@ export class ProductService {
 
     createProduct(product: Product): Observable<Product>{
         return this.httpClient.post<Product>(this.BASE_URL, product);
+    }
+
+    getCategories(): Observable<string[]>{
+        return this.httpClient.get<string[]>(this.BASE_URL + '/categories');
     }
 
 }
