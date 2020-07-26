@@ -23,7 +23,6 @@ export class InventoryComponent implements OnInit {
         this.productService.getProducts().subscribe(
             res => {
                 this.inventory = res;
-                console.log('It works a little');
             }, error => {
                 alert('Error while retrieving data');
             }
