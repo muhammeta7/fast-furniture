@@ -23,4 +23,8 @@ export class ProductService {
         return this.httpClient.get<string[]>(this.BASE_URL + '/category/index');
     }
 
+    getLocations(): Observable<string[]>{
+        return this.httpClient.get<string[]>(this.BASE_URL + '/abbr/index');
+    }
+
 }
