@@ -11,23 +11,18 @@
                            [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2"
                            maxlength="32"/>
                 </div>
+
                 <div class="form-group col-sm-4">
-<!--                    <label for="category">Category</label>-->
-<!--                    <input type="text" id="category" name="category" class="form-control rounded-pill"-->
-<!--                           [(ngModel)]="product.category"-->
-<!--                           #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required-->
-<!--                           minlength="2" maxlength="32"/>-->
                     <label for="category">Category</label>
-                    <select class="form-control rounded-pill" [(ngModel)]="product.category" name="category" id="category">
-                        <option *ngFor="let str of categories" class="rounded-pill">{{str}}</option>
-                    </select>
+                    <input type="text" id="category" name="category" class="form-control rounded-pill" list="categories"
+                           [(ngModel)]="product.category" #category="ngModel"
+                           [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required minlength="2" maxlength="32"/>
+                    <datalist id="categories">
+                        <option *ngFor="let category of categories" class="rounded-pill">{{category}}</option>
+                    </datalist>
                 </div>
-            </div>
-
-            <div class="form-group row">
 
             </div>
-
 
             <div class="row">
                 <div class="col-sm-4">

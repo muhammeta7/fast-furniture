@@ -20,7 +20,7 @@ export class ProductService {
     }
 
     getCategories(): Observable<string[]>{
-        return this.httpClient.get<string[]>(this.BASE_URL + '/categories');
+        return this.httpClient.get<string[]>(this.BASE_URL + '/category/index');
     }
 
 }
