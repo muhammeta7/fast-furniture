@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class AddProductComponent implements OnInit {
     inventory: Product[] = [];
     categories: string[] = [];
+    locations: string[] = [];
 
     product: Product = {
         id: null,
@@ -28,11 +29,11 @@ export class AddProductComponent implements OnInit {
     constructor(
         private productService: ProductService,
         private router: Router
-    ) {
-    }
+    ){}
 
     ngOnInit() {
         this.getCategories();
+        this.getLocations();
     }
 
     createProduct() {
@@ -59,6 +60,19 @@ export class AddProductComponent implements OnInit {
                 });
             }, (error) => {
                 alert('Error while getting categories');
+            }
+        );
+    }
+
+    getLocations() {
+        this.productService.getLocations().subscribe(
+            (res) => {
+                res.forEach((element) => {
+                    this.locations.push(element);
+                    console.log(element);
+                });
+            }, (error) => {
+                alert('Error while getting locations');
             }
         );
     }
