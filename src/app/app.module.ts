@@ -9,6 +9,7 @@ import {InventoryComponent} from './inventory/inventory.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
+import { AddImagesComponent } from './add-images/add-images.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
         AddProductComponent,
         NavigationComponent,
         InventoryComponent,
-        UploadImagesComponent
+        UploadImagesComponent,
+        AddImagesComponent
     ],
     imports: [
         BrowserModule,
