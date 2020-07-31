@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AddProductComponent} from './add-product/add-product.component';
+// @ts-ignore
 import {InventoryComponent} from './inventory/inventory.component';
 import {UploadImagesComponent} from './upload-images/upload-images.component';
 import {AddImagesComponent} from './add-images/add-images.component';
