@@ -4,5 +4,5 @@ export interface Image {
     id: number;
     fileName: string;
     type: string;
-    product: Product;
+    imgBytes: string;
 }
