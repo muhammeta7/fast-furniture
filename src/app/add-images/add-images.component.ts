@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
+
 
 @Component({
     selector: 'app-add-images',
@@ -13,7 +16,7 @@ export class AddImagesComponent implements OnInit {
     base64Data: any;
     retrieveResonse: any;
     message: string;
-    imageName: any;
+    imageName: string;
 
     ngOnInit(){ }
 
@@ -39,8 +42,8 @@ export class AddImagesComponent implements OnInit {
             );
     }
 
-    getImage() {
-        this.httpClient.get('http://localhost:8080/api/images/' + this.imageName)
+    getImage(imageName: string) {
+        this.httpClient.get('http://localhost:8080/api/images/' + imageName)
             .subscribe(
                 res => {
                     this.retrieveResonse = res;

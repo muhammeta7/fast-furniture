@@ -24,7 +24,8 @@ import { AddImagesComponent } from './add-images/add-images.component';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+
     ],
     providers: [],
     bootstrap: [AppComponent]

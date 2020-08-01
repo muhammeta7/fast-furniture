@@ -13,18 +13,7 @@ export class AddProductComponent implements OnInit {
     categories: string[] = [];
     locations: string[] = [];
 
-    product: Product = {
-        id: null,
-        name: '',
-        abbreviation: '',
-        location: '',
-        length: null,
-        width: null,
-        depth: null,
-        qty: null,
-        description: '',
-        category: ''
-    };
+    product: Product;
 
     constructor(
         private productService: ProductService,
