@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import {Image} from '../upload-images/model/image';
 
 
 
@@ -10,9 +11,10 @@ import { map } from 'rxjs/operators';
     styleUrls: ['./add-images.component.scss']
 })
 export class AddImagesComponent implements OnInit {
-    id: number;
+    image: Image;
     selectedFile: File;
     retrievedImage: any;
+
     base64Data: any;
     retrieveResonse: any;
     message: string;
