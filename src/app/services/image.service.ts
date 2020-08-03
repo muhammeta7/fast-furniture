@@ -13,8 +13,11 @@ export class ImageService {
     constructor(private httpClient: HttpClient) {
     }
 
-    uploadImage(image: Image): Observable<Image> {
+    uploadImage(image: Image): Observable<any> {
         return this.httpClient.post<Image>(this.BASE_URL + '/upload', image);
     }
 
+    getImageByName(name: string): any {
+        return this.httpClient.get(this.BASE_URL + '/' + name);
+    }
 }
