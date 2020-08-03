@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import {Image} from '../upload-images/model/image';
+import {Product} from '../add-product/model/product';
 
 
 
@@ -12,13 +13,13 @@ import {Image} from '../upload-images/model/image';
 })
 export class AddImagesComponent implements OnInit {
     image: Image;
+    product: Product;
     selectedFile: File;
     retrievedImage: any;
 
     base64Data: any;
     retrieveResonse: any;
     message: string;
-    imageName: string;
 
     ngOnInit(){ }
 
@@ -29,13 +30,15 @@ export class AddImagesComponent implements OnInit {
     }
 
     onUpload(){
-        console.log(this.selectedFile);
+        console.log('File' + this.selectedFile);
         const uploadImageData = new FormData();
         uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
-
+        console.log('ImageData:  ' + uploadImageData.forEach( value => console.log(value)));
         this.httpClient.post('http://localhost:8080/api/images/upload', uploadImageData, {observe: 'response'})
             .subscribe((response) => {
                     if (response.status === 200) {
+                        response = this.retrievedImage;
+                        console.log( 'Response:  ' + response);
                         this.message = 'Image uploaded successfully';
                     } else {
                         this.message = 'Image not uploaded successfully';
