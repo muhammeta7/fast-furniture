@@ -20,6 +20,7 @@ export class AddImagesComponent implements OnInit {
     base64Data: any;
     retrieveResonse: any;
     message: string;
+    imageName: any;
 
     ngOnInit(){ }
 
@@ -32,7 +33,7 @@ export class AddImagesComponent implements OnInit {
     onUpload(){
         console.log('File' + this.selectedFile);
         const uploadImageData = new FormData();
-        uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+        uploadImageData.append('image', this.selectedFile, this.selectedFile.name);
         console.log('ImageData:  ' + uploadImageData.forEach( value => console.log(value)));
         this.httpClient.post('http://localhost:8080/api/images/upload', uploadImageData, {observe: 'response'})
             .subscribe((response) => {
@@ -52,7 +53,7 @@ export class AddImagesComponent implements OnInit {
             .subscribe(
                 res => {
                     this.retrieveResonse = res;
-                    this.base64Data = this.retrieveResonse.picByte;
+                    this.base64Data = this.retrieveResonse.imgBytes;
                     this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
                 }
             );
