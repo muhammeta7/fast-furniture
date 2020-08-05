@@ -1,8 +1,9 @@
 <div class="flex-container">
 
     <div class="form_container">
-        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createProduct2()" novalidate class="product">
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createProduct()" novalidate class="product">
             <h3 class="text-center display-4">Add New Product</h3>
+
             <div class="row">
                 <div class="col-sm-8">
                     <label for="name">Product Name</label>
@@ -12,10 +13,10 @@
                 </div>
 
                 <div class="col-sm-4">
-                    <label for="abbr">Abbreviation</label>
-                    <input type="text" id="abbr" name="abbr" class="form-control rounded-pill"
+                    <label for="abbreviation">Abbreviation</label>
+                    <input type="text" id="abbreviation" name="abbreviation" class="form-control rounded-pill"
                            [(ngModel)]="product.abbreviation"
-                           #abbr="ngModel" [ngClass]="{ 'is-invalid': f.submitted && abbr.invalid }" required
+                           #abbreviation="ngModel" [ngClass]="{ 'is-invalid': f.submitted && abbreviation.invalid }" required
                            minlength="2" maxlength="5"/>
                 </div>
 
@@ -83,7 +84,7 @@
 
             <div class="d-flex justify-content-center">
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-lg rounded-pill create-button" [disabled]="!f.form.valid">
+                    <button type="submit" class="btn btn-lg btn-success rounded-pill create-button" [disabled]="!f.form.valid">
                         Add Product<span> <i class="fa fa-hand-pointer-o ml-2"></i></span>
                     </button>
                 </div>
@@ -91,9 +92,6 @@
 
         </form>
 
-<!--        <div>-->
-<!--            <app-add-images></app-add-images>-->
-<!--        </div>-->
     </div>
 
 </div>
