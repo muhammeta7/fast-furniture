@@ -19,10 +19,6 @@ export class ProductService {
         return this.httpClient.post<Product>(this.BASE_URL, product);
     }
 
-    createProduct2(product: Product): Observable<Product>{
-        return this.httpClient.post<Product>(this.BASE_URL + '/create', product);
-    }
-
     getCategories(): Observable<string[]>{
         return this.httpClient.get<string[]>(this.BASE_URL + '/category/index');
     }
