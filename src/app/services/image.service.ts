@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpRequest} from '@angular/common/http';
 import {Image} from '../upload-images/model/image';
 import {Observable} from 'rxjs';
 
@@ -14,7 +14,7 @@ export class ImageService {
     }
 
     uploadImage(image: Image): Observable<any> {
-        return this.httpClient.post<Image>(this.BASE_URL + '/upload', image);
+        return this.httpClient.post<Image>(this.BASE_URL, image);
     }
 
     getImageByName(name: string): any {

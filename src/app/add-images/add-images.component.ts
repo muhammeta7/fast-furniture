@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import {HttpClient, HttpEventType, HttpResponse} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 import {Image} from '../upload-images/model/image';
 import {Product} from '../add-product/model/product';
-
+import {Observable} from 'rxjs';
+import {ImageService} from '../services/image.service';
 
 
 @Component({
@@ -19,14 +20,24 @@ export class AddImagesComponent implements OnInit {
 
     base64Data: any;
     retrieveResonse: any;
-    message: string;
+    // message: string;
     imageName: any;
 
-    ngOnInit(){ }
+    selectedFiles: FileList;
+    currentFile: File;
+    progress = 0;
+    message = '';
 
-    constructor(private httpClient: HttpClient){ }
+    fileInfos: Observable<any>;
 
-    public onFileChanged(event){
+
+    ngOnInit() {
+    }
+
+    constructor(private httpClient: HttpClient, private imageService: ImageService) {
+    }
+
+    public onFileChanged(event) {
         this.selectedFile = event.target.files[0];
     }
 
@@ -35,7 +46,7 @@ export class AddImagesComponent implements OnInit {
         const uploadImageData = new FormData();
         uploadImageData.append('image', this.selectedFile, this.selectedFile.name);
         console.log('ImageData:  ' + uploadImageData.forEach( value => console.log(value)));
-        this.httpClient.post('http://localhost:8080/api/images/upload', uploadImageData, {observe: 'response'})
+        this.httpClient.post('http://localhost:8080/api/images', uploadImageData, {observe: 'response'})
             .subscribe((response) => {
                     if (response.status === 200) {
                         response = this.retrievedImage;
@@ -48,14 +59,14 @@ export class AddImagesComponent implements OnInit {
             );
     }
 
-    getImage(imageName: string) {
-        this.httpClient.get('http://localhost:8080/api/images/' + imageName)
-            .subscribe(
-                res => {
-                    this.retrieveResonse = res;
-                    this.base64Data = this.retrieveResonse.imgBytes;
-                    this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
-                }
-            );
-    }
+    // getImage(imageName: string) {
+    //     this.httpClient.get('http://localhost:8080/api/images/' + imageName)
+    //         .subscribe(
+    //             res => {
+    //                 this.retrieveResonse = res;
+    //                 this.base64Data = this.retrieveResonse.imgBytes;
+    //                 this.retrievedImage = 'data:image/jpeg;base64,' + this.base64Data;
+    //             }
+    //         );
+    // }
 }
