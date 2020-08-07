@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(~bootstrap/dist/css/bootstrap.min.css);
+@import url(~font-awesome/css/font-awesome.min.css);
+
+body{
+  background-color: #f5e6e1;
+  //background-image: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
+  //background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png");
+  background-image: url("https://www.transparenttextures.com/patterns/nistri.png");
+  // background-image: url("https://www.transparenttextures.com/patterns/subtle-white-feathers.png");
+  //background-image: url("https://www.transparenttextures.com/patterns/tileable-wood-colored.png");
+
+}
+
+
+// Global Color Scheme
+:root{
+  --blue:  #1e3d59;
+  --orange:  rgba(255, 110, 64, 0.76);
+  --tan: #f5e6e1;
+  --yellow: #ffea04;
+}
+
