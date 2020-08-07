@@ -8,13 +8,13 @@ h3{
   margin: 5% auto;
   padding: 4% 5%;
   background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
-  background-color: rgba(255, 110, 64, 0.76);
+  background-color: var(--orange);
   width: 80%;
   z-index: 2;
 }
 
 .create-button{
-  background-color: #1e3d59;
+  background-color: var(--blue);
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
   color: white;
   margin-top: 8%;
