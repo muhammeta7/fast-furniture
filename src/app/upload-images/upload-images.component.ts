@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ImageService} from '../services/image.service';
 import {Image} from './model/image';
+import {Observable} from 'rxjs';
+import {UploadService} from '../services/upload.service';
+import {HttpEventType, HttpResponse} from '@angular/common/http';
 
 @Component({
     selector: 'app-upload-images',
@@ -8,31 +11,46 @@ import {Image} from './model/image';
     styleUrls: ['./upload-images.component.scss']
 })
 export class UploadImagesComponent implements OnInit {
-    image: Image;
-    selectedFile: File;
-    message: string;
+    selectedFiles: FileList;
+    progressInfos = [];
+    message = '';
 
-    constructor(private imageService: ImageService) {
+    fileInfos: Observable<any>;
+
+    constructor(private uploadService: UploadService) {
     }
 
-    ngOnInit() {}
-
-    public onFileChanged(event){
-        this.selectedFile = event.target.files[0];
+    ngOnInit() {
+        this.fileInfos = this.uploadService.getFiles();
     }
 
-    uploadImage(){
-        console.log(this.selectedFile);
-        const uploadImageData = new FormData();
-        uploadImageData.append('image', this.selectedFile, this.selectedFile.name);
-        this.imageService.uploadImage(this.image).subscribe((response) => {
-                if (response.status === 200) {
-                    this.message = 'Image uploaded successfully';
-                } else {
-                    this.message = 'Image not uploaded successfully';
+    selectFiles(event) {
+        this.progressInfos = [];
+        this.selectedFiles = event.target.files;
+    }
+
+    uploadFiles() {
+        this.message = '';
+
+        for (let i = 0; i < this.selectedFiles.length; i++) {
+            this.upload(i, this.selectedFiles[i]);
+        }
+    }
+
+    upload(idx, file) {
+        this.progressInfos[idx] = { value: 0, fileName: file.name };
+
+        this.uploadService.upload(file).subscribe(
+            event => {
+                if (event.type === HttpEventType.UploadProgress) {
+                    this.progressInfos[idx].value = Math.round(100 * event.loaded / event.total);
+                } else if (event instanceof HttpResponse) {
+                    this.fileInfos = this.uploadService.getFiles();
                 }
-            }
-        );
+            },
+            err => {
+                this.progressInfos[idx].value = 0;
+                this.message = 'Could not upload the file:' + file.name;
+            });
     }
-
 }
