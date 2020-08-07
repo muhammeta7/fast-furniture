@@ -5,9 +5,19 @@ nav{
 }
 
 .nav-item.nav-link, .navbar-brand{
-  color: #ffea04;
+  color: var(--yellow);
+}
+
+.navbar-brand{
+  padding: 1%;
+  font-size: 1.6rem;
 }
 
 .container-fluid{
   padding: 0;
+}
+
+.nav-item.nav-link{
+  margin-right: auto;
+  font-size: 1.2rem;
 }
