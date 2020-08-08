@@ -5,25 +5,22 @@
   background-color: rgba(255, 110, 64, 0.76);
   width: 80%;
 }
-h4{
-  text-align: center;
-  margin: 1% auto;
-  color: #ffc13b;
-  padding: 2%;
-  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
-  background-color: #1e3d59;
-  width: 30%;
+
+h3{
+  padding-bottom: 2%;
+  color: white;
+  font-size: 2.5rem;
 }
 
 thead{
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
   background-color: #1e3d59;
-  color: #ffc13b;
+  color: var(--yellow);
 }
 
 tbody{
-  background: #f5e6e1;
-  color: #1e3d59;
+  background: var(--tan);;
+  color: var(--blue);;
   font-weight: bold;
 }
 
