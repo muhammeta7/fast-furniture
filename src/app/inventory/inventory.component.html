@@ -16,7 +16,7 @@
         </thead>
         <tbody>
         <tr *ngFor="let product of inventory">
-            <td>{{product.name}}</td>
+            <td (click)="onClick(product.id)">{{product.name}}</td>
             <td>{{product.abbreviation}}</td>
             <td>{{product.location}}</td>
             <td>{{product.length}}"</td>
