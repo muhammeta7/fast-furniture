@@ -1,14 +1,19 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AddProductComponent} from './add-product/add-product.component';
+// @ts-ignore
 import {InventoryComponent} from './inventory/inventory.component';
 import {UploadImagesComponent} from './upload-images/upload-images.component';
+import {AddImagesComponent} from './add-images/add-images.component';
+import {CreateProductComponent} from './create-product/create-product.component';
 
 
 const routes: Routes = [
     {path: 'add', component: AddProductComponent},
     {path: 'products', component: InventoryComponent},
     {path: 'image', component: UploadImagesComponent},
+    {path: 'new', component: AddImagesComponent},
+    {path: 'prod', component: CreateProductComponent},
     {path: '' , component: InventoryComponent}
 ];
 

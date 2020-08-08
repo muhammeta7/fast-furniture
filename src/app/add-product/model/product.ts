@@ -1,3 +1,5 @@
+import {Image} from '../../upload-images/model/image';
+
 export interface Product {
     id: number;
     name: string;
@@ -9,4 +11,5 @@ export interface Product {
     qty: number;
     description: string;
     category: string;
+    photos: Image[];
 }

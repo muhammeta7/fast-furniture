@@ -9,6 +9,8 @@ import {InventoryComponent} from './inventory/inventory.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
+import { AddImagesComponent } from './add-images/add-images.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 @NgModule({
     declarations: [
@@ -16,13 +18,16 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
         AddProductComponent,
         NavigationComponent,
         InventoryComponent,
-        UploadImagesComponent
+        UploadImagesComponent,
+        AddImagesComponent,
+        CreateProductComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+
     ],
     providers: [],
     bootstrap: [AppComponent]
