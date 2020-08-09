@@ -6,6 +6,7 @@ import {InventoryComponent} from './inventory/inventory.component';
 import {UploadImagesComponent} from './upload-images/upload-images.component';
 import {AddImagesComponent} from './add-images/add-images.component';
 import {CreateProductComponent} from './create-product/create-product.component';
+import {ProductInfoComponent} from './product-info/product-info.component';
 
 const routes: Routes = [
     {path: 'add', component: AddProductComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
     {path: 'image', component: UploadImagesComponent},
     {path: 'new', component: AddImagesComponent},
     {path: 'prod', component: CreateProductComponent},
+    {path: 'info', component: ProductInfoComponent},
     {path: '' , component: InventoryComponent}
 ];
 
