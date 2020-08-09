@@ -2,7 +2,7 @@
 
     <div class="form_container">
         <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createProduct()" novalidate class="product">
-            <h3 class="text-center display-4">Add New Product</h3>
+            <h3 class="text-center display-4">ADD NEW PRODUCT</h3>
 
             <div class="row">
                 <div class="col-sm-8">
@@ -85,7 +85,7 @@
             <div class="d-flex justify-content-center">
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-lg btn-success rounded-pill create-button" [disabled]="!f.form.valid">
-                        Add Product<span> <i class="fa fa-hand-pointer-o ml-2"></i></span>
+                        <i class="fa fa-plus-circle fa-3x"></i>
                     </button>
                 </div>
             </div>

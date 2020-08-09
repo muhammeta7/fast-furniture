@@ -11,10 +11,11 @@
 }
 
 body{
-  background-color: var(--tan);
-  background-image: url("https://www.transparenttextures.com/patterns/nistri.png");
+  background-color: var(--orange);
+  background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
+  z-index: 0;
 }
 
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
