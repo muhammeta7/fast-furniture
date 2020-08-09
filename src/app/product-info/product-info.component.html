@@ -1,1 +1,25 @@
-<p>product-info works!</p>
+<h2 style="text-align: center;">Basic Modal</h2>
+<div style="width: fit-content;margin: auto;margin-top: 18px;">
+    <button type="button" class="btn btn-primary" (click)="openModalWithClass(template)">Open modal</button>
+</div>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <h3>Modal Body</h3>
+        <ul>
+            <li>Some Random Stuff</li>
+        </ul>
+        <h3>Coolio</h3>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="modalRef.hide()">Close</button>
+    </div>
+</ng-template>
