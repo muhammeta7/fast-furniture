@@ -7,7 +7,6 @@ import {UploadImagesComponent} from './upload-images/upload-images.component';
 import {AddImagesComponent} from './add-images/add-images.component';
 import {CreateProductComponent} from './create-product/create-product.component';
 
-
 const routes: Routes = [
     {path: 'add', component: AddProductComponent},
     {path: 'products', component: InventoryComponent},

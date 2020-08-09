@@ -6,12 +6,9 @@
             <th>Name</th>
             <th>Abbreviation</th>
             <th>Location</th>
-            <th>Length</th>
-            <th>Width</th>
-            <th>Depth</th>
             <th>Category</th>
             <th>Quantity</th>
-            <th>Description</th>
+            <th>Details</th>
         </tr>
         </thead>
         <tbody>
@@ -19,13 +16,22 @@
             <td (click)="onClick(product.id)">{{product.name}}</td>
             <td>{{product.abbreviation}}</td>
             <td>{{product.location}}</td>
-            <td>{{product.length}}"</td>
-            <td>{{product.width}}"</td>
-            <td>{{product.depth}}"</td>
             <td>{{product.category}}</td>
             <td>{{product.qty}}</td>
-            <td>{{product.description}}</td>
+            <td><span><button type="button" class="btn btn-md btn-info rounded-pill">
+                More <i class="fa fa-info-circle ml-2"></i></button></span>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
+
+
+<!--            <th>Length</th>-->
+<!--            <th>Width</th>-->
+<!--            <th>Depth</th>-->
+
+<!--            -->
+<!--            <td>{{product.length}}"</td>-->
+<!--            <td>{{product.width}}"</td>-->
+<!--<td>{{product.depth}}"</td>-->

@@ -9,8 +9,8 @@ import {InventoryComponent} from './inventory/inventory.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
-import { AddImagesComponent } from './add-images/add-images.component';
-import { CreateProductComponent } from './create-product/create-product.component';
+import {ProductInfoComponent} from './product-info/product-info.component';
+
 
 @NgModule({
     declarations: [
@@ -19,15 +19,14 @@ import { CreateProductComponent } from './create-product/create-product.componen
         NavigationComponent,
         InventoryComponent,
         UploadImagesComponent,
-        AddImagesComponent,
-        CreateProductComponent
+        ProductInfoComponent
+
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule,
-
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
