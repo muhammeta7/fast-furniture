@@ -20,17 +20,6 @@ export class InventoryComponent implements OnInit {
         this.getProducts();
     }
 
-    // getProductById(id: number) {
-    //     this.productService.getProductById(id).subscribe(
-    //         res => {
-    //             this.inventory.find(x => x.id === id);
-    //         },
-    //         error => {
-    //             alert('An error has occurred.');
-    //         }
-    //     );
-    // }
-
     getProducts() {
         this.productService.getProducts().subscribe(
             res => {
