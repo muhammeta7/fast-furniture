@@ -26,14 +26,20 @@ thead{
   background-color: var(--blue);
 }
 
-th, tr, td{
+th{
   border: 3px solid var(--orange);
+}
+
+th{
+  padding: 3%;
+  font-size: 1.2rem;
 }
 
 tbody{
   color: var(--yellow);;
   background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
   background-color: var(--blue);
+  border: 3px solid var(--orange);
 }
 
 .table{
