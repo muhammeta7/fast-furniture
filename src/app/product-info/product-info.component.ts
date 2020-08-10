@@ -15,23 +15,13 @@ export class ProductInfoComponent implements OnInit {
     constructor(private productService: ProductService, private modalService: BsModalService) {
     }
 
-    ngOnInit() {}
+    ngOnInit() {
+    }
 
     openModalWithClass(template: TemplateRef<any>) {
         this.modalRef = this.modalService.show(
             template,
             Object.assign({}, {class: 'gray modal-lg'})
-        );
-    }
-
-    getProductById(id: number) {
-        this.productService.getProductById(id).subscribe(
-            res => {
-                this.currentProduct = res;
-            },
-            error => {
-                alert('An error has occurred.');
-            }
         );
     }
 
