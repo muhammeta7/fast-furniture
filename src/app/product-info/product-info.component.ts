@@ -9,7 +9,6 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap/modal';
     styleUrls: ['./product-info.component.scss']
 })
 export class ProductInfoComponent implements OnInit {
-    currentProduct: Product;
     modalRef: BsModalRef;
 
     constructor(private productService: ProductService, private modalService: BsModalService) {
