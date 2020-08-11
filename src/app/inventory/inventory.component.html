@@ -1,28 +1,75 @@
 <div class="container-fluid table-responsive">
     <h3 class="text-center display-4">Current Inventory</h3>
-    <table class="table table-bordered table-hover table-striped">
+    <table class="table table-bordered table-hover table-striped table-dark">
         <thead>
-        <tr>
-            <th>Name</th>
-            <th>Abbreviation</th>
-            <th>Location</th>
-            <th>Category</th>
-            <th>Quantity</th>
-            <th>Details</th>
+        <tr id="product-titles">
+            <th>NAME</th>
+            <th>ABBREVIATION</th>
+            <th>LOCATION</th>
+            <th>CATEGORY</th>
+            <th>QTY</th>
+            <th>DETAILS</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let product of inventory">
-            <td (click)="onClick(product.id)">{{product.name}}</td>
+            <td>{{product.name}}</td>
             <td>{{product.abbreviation}}</td>
             <td>{{product.location}}</td>
             <td>{{product.category}}</td>
             <td>{{product.qty}}</td>
-            <td><button type="button" class="btn btn-md rounded-pill">
-                More <i class="fa fa-info-circle ml-2"></i></button>
+            <td>
+                <button type="button" class="btn btn-md rounded-pill"
+                        (click)="getProductById(product.id); this.display=true">
+                    More <i class="fa fa-info-circle ml-2"></i></button>
             </td>
         </tr>
         </tbody>
     </table>
+    <div *ngIf="this.selectedProduct?.id" [hidden]="!display" id="info">
+        <h3 class="text-center text-white display-4">Product: {{this.selectedProduct?.name}}</h3>
+        <div>
+
+        </div>
+        <div class="dimensions">
+            <h4 class="text-center text-white">Dimensions in Inches</h4>
+            <table class="table table-bordered table-dark">
+                <thead>
+                <tr>
+                    <th>Length</th>
+                    <th>Width</th>
+                    <th>Depth</th>
+                    <th>Update Quantity</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{this.selectedProduct.length}}"</td>
+                    <td>{{this.selectedProduct.width}}"</td>
+                    <td>{{this.selectedProduct.depth}}"</td>
+                    <!--<label for="quantity">Update Quantity</label>-->
+<!--                        <input type="number" id="quantity" aria-describedby="emailHelp">-->
+                    <td>
+                        <div class="input-group">
+                            <input type="number" class="form-control" placeholder="Update Quantity"
+                                   aria-describedby="button-addon4" [(ngModel)]="selectedProduct.qty">
+                            <div class="input-group-append" id="button-addon4">
+                                <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)">Button</button>
+                                <button class="btn btn-outline-secondary" type="button">Button</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!--        <div class="form-group">-->
+        <!--            <label for="exampleInputEmail1">Email address</label>-->
+        <!--            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
+        <!--            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+        <!--        </div>-->
+    </div>
 </div>
 

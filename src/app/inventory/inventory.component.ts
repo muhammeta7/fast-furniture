@@ -12,12 +12,14 @@ export class InventoryComponent implements OnInit {
 
     inventory: Product[] = [];
     selectedProduct: Product;
+    display: boolean;
 
     constructor(private productService: ProductService) {
     }
 
     ngOnInit() {
         this.getProducts();
+        console.log(this.inventory.length);
     }
 
     getProducts() {
@@ -30,16 +32,11 @@ export class InventoryComponent implements OnInit {
         );
     }
 
-    onClick(id: number){
-        this.selectedProduct = this.inventory.find(x => x.id === id);
-        console.log(this.selectedProduct.name);
-    }
 
-    updateQuantity(id: number, qty: number){
+    increaseQuantity(id: number, qty: number){
         this.productService.increaseQuantity(id, qty).subscribe(
             res => {
                 this.selectedProduct.qty += qty;
-                this.selectedProduct.qty = res.qty;
             },
             error => {
                 alert('An error has occurred.');

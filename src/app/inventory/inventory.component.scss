@@ -1,11 +1,47 @@
 .container-fluid{
   margin: 3% auto;
   padding: 3%;
-  background-image: url("https://www.transparenttextures.com/patterns/nistri.png");
-  background-color: var(--tan);
+  background-image: var(--crossword);
+  background-color: var(--orange);
   width: 80%;
   z-index: 2;
   box-shadow: inset 0 0 5px 5px var(--blue);
+}
+
+table{
+  text-align: center;
+  box-shadow: 0 3px 12px yellow;
+}
+
+h3{
+  padding-bottom: 2%;
+  color: white;
+  font-size: 2.5rem;
+  margin-top: 2%;
+  font-weight: 100;
+}
+
+
+thead{
+  color: var(--yellow);;
+  background-image: var(--absurdity);
+  background-color: var(--blue);
+}
+
+tr, td{
+  border-top: 0;
+}
+
+tr th{
+  padding: 2%;
+  font-size: 1.2rem;
+  border-top: 0;
+}
+
+tbody{
+  color: var(--blue);;
+  background-image: var(--crossword);
+  background-color: var(--tan);
 }
 
 button{
@@ -14,34 +50,17 @@ button{
   color: white;
 }
 
-h3{
-  padding-bottom: 2%;
-  color: var(--blue);
-  font-size: 2.5rem;
-}
-
-thead{
-  color: var(--yellow);;
-  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+#info{
+  margin: 5% auto;
+  width: 100%;
   background-color: var(--blue);
+  color: var(--yellow);
 }
 
-th{
-  border: 3px solid var(--orange);
+#info h3{
+  padding-top: 3%;
 }
 
-th{
-  padding: 3%;
-  font-size: 1.2rem;
-}
-
-tbody{
-  color: var(--yellow);;
-  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
-  background-color: var(--blue);
-  border: 3px solid var(--orange);
-}
-
-.table{
-  text-align: center;
-}
+//.dimensions{
+//  width: 60%;
+//}
