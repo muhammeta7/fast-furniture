@@ -9,6 +9,7 @@
   --orange:  rgba(255, 110, 64, 0.76);
   --tan: #f5e6e1;
   --yellow: #ffea04;
+  // Backgrounds
   --absurdity: url("https://www.transparenttextures.com/patterns/absurdity.png");
   --crossword: url("https://www.transparenttextures.com/patterns/crossword.png");
   --nistri: url("https://www.transparenttextures.com/patterns/nistri.png");
@@ -17,7 +18,7 @@
 
 body{
   background-color: var(--tan);
-  background-image: var(--absurdity);
+  background-image: var(--crossword);
   z-index: 0;
 }
 

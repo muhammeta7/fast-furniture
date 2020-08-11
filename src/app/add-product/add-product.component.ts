@@ -12,8 +12,19 @@ export class AddProductComponent implements OnInit {
     inventory: Product[] = [];
     categories: string[] = [];
     locations: string[] = [];
-
-    product: Product;
+    product: Product = {
+        id: null,
+        name: '',
+        abbreviation: '',
+        location: '',
+        length: null,
+        width: null,
+        depth: null,
+        qty: null,
+        description: '',
+        category: '',
+        photos: [],
+    };
 
     constructor(
         private productService: ProductService,
@@ -21,6 +32,7 @@ export class AddProductComponent implements OnInit {
     ){}
 
     ngOnInit() {
+        this.getProducts();
         this.getCategories();
         this.getLocations();
     }
@@ -31,13 +43,23 @@ export class AddProductComponent implements OnInit {
                 if (this.inventory.includes(res)) {
                     alert('Product already exists');
                 } else {
-                    this.product = res;
                     this.inventory.push(res);
                     this.router.navigate(['/products']);
                 }
             },
             (error) => {
                 alert('An error has occurred while creating product');
+            }
+        );
+    }
+
+    getProducts() {
+        this.productService.getProducts().subscribe(
+            res => {
+                this.inventory = res;
+                console.log(res);
+            }, error => {
+                alert('Error while retrieving data');
             }
         );
     }
@@ -67,3 +89,4 @@ export class AddProductComponent implements OnInit {
         );
     }
 }
+
