@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../services/product.service';
 import {Product} from '../add-product/model/product';
 import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-inventory',
@@ -14,12 +15,11 @@ export class InventoryComponent implements OnInit {
     selectedProduct: Product;
     display: boolean;
 
-    constructor(private productService: ProductService) {
+    constructor(private productService: ProductService, private router: Router) {
     }
 
     ngOnInit() {
         this.getProducts();
-        console.log(this.inventory.length);
     }
 
     getProducts() {
@@ -37,6 +37,7 @@ export class InventoryComponent implements OnInit {
         this.productService.increaseQuantity(id, qty).subscribe(
             res => {
                 this.selectedProduct.qty += qty;
+                this.router.navigate(['products']);
             },
             error => {
                 alert('An error has occurred.');
@@ -49,6 +50,7 @@ export class InventoryComponent implements OnInit {
             res => {
                 if (res.qty - qty >= 0){
                     this.selectedProduct.qty -= qty;
+                    this.router.navigate(['products']);
                 }
             },
             error => {
