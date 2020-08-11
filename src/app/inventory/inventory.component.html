@@ -47,29 +47,26 @@
                     <td>{{this.selectedProduct.length}}"</td>
                     <td>{{this.selectedProduct.width}}"</td>
                     <td>{{this.selectedProduct.depth}}"</td>
-                    <!--<label for="quantity">Update Quantity</label>-->
-<!--                        <input type="number" id="quantity" aria-describedby="emailHelp">-->
                     <td>
                         <div class="input-group">
                             <input type="number" class="form-control" placeholder="Update Quantity"
                                    aria-describedby="button-addon4" [(ngModel)]="selectedProduct.qty">
                             <div class="input-group-append" id="button-addon4">
-                                <button class="btn btn-outline-secondary" type="button" (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)">Button</button>
-                                <button class="btn btn-outline-secondary" type="button">Button</button>
+                                <button class="btn btn-outline-success" type="button" (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i class="fa fa-plus-circle"></i></button>
+                                <button class="btn btn-outline-secondary" type="button" (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i class="fa fa-minus-circle"></i></button>
                             </div>
                         </div>
                     </td>
                 </tr>
                 </tbody>
             </table>
+
+            <div>
+                <h4 class="text-center text-white">Product Description</h4>
+                {{selectedProduct.description}}
+            </div>
         </div>
 
-
-        <!--        <div class="form-group">-->
-        <!--            <label for="exampleInputEmail1">Email address</label>-->
-        <!--            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">-->
-        <!--            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-        <!--        </div>-->
     </div>
 </div>
 
