@@ -44,6 +44,19 @@ export class InventoryComponent implements OnInit {
         );
     }
 
+    decreaseQuantity(id: number, qty: number){
+        this.productService.decreaseQuantity(id, qty).subscribe(
+            res => {
+                if (res.qty - qty >= 0){
+                    this.selectedProduct.qty -= qty;
+                }
+            },
+            error => {
+                alert('An error has occurred.');
+            }
+        );
+    }
+
     getProductById(id: number) {
         this.productService.getProductById(id).subscribe(
             res => {

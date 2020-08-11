@@ -38,4 +38,12 @@ export class ProductService {
         param.append('qty', qty);
         return this.http.put<Product>(url, param);
     }
+
+    decreaseQuantity(id: number, qty: number){
+        const url = `${this.BASE_URL}/${id}/decrease/qty`;
+        const param = new FormData();
+        // @ts-ignore
+        param.append('qty', qty);
+        return this.http.put<Product>(url, param);
+    }
 }
