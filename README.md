@@ -1,4 +1,4 @@
-#FastFurniture
+# FastFurniture
 Application was developed to assist a few friends who just started a new business. 
 
 # Technologies
