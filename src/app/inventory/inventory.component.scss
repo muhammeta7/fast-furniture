@@ -3,29 +3,33 @@
   padding: 3%;
   background-image: var(--crossword);
   background-color: var(--orange);
-  width: 80%;
-  z-index: 2;
-  box-shadow: inset 0 0 5px 5px var(--blue);
-}
-
-table{
-  text-align: center;
-  box-shadow: 0 3px 12px yellow;
+  width: 90%;
+  box-shadow: inset 0 0 5px 5px var(--yellow);
 }
 
 h3{
   padding-bottom: 2%;
   color: white;
   font-size: 2.5rem;
-  margin-top: 2%;
-  font-weight: 100;
 }
 
+.table{
+  text-align: center;
+  width: 90%;
+  margin: 1rem auto;
+  z-index: 10;
+  box-shadow: inset 0 0 2px 2px var(--yellow);
+}
+
+.table td{
+
+}
 
 thead{
-  color: var(--yellow);;
-  background-image: var(--absurdity);
+  color: var(--yellow);
+  background-image: var(--alum);
   background-color: var(--blue);
+  opacity: 20;
 }
 
 tr, td{
@@ -40,14 +44,20 @@ tr th{
 
 tbody{
   color: var(--blue);;
-  background-image: var(--crossword);
+ //background-image: var(--crossword);
   background-color: var(--tan);
 }
 
 button{
   background-color: var(--orange);
+  background-image: var(--crossword);
   padding: 6% 8%;
   color: white;
+}
+
+td{
+  vertical-align: 0;
+  padding: .7rem;
 }
 
 #info{
@@ -61,6 +71,17 @@ button{
   padding-top: 3%;
 }
 
-//.dimensions{
-//  width: 60%;
-//}
+.quantity{
+  width: 15%;
+}
+
+.form-control{
+  text-align: center;
+}
+
+.update{
+  background-color: var(--orange);
+  background-image: var(--crossword);
+  box-shadow: inset 0 0 5px 5px var(--yellow);
+  z-index: 2;
+}
