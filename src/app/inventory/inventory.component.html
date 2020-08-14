@@ -19,7 +19,7 @@
             <td>{{product.category}}</td>
             <td>{{product.qty}}</td>
             <td>
-                <button type="button" class="btn btn-md rounded-pill"
+                <button type="button" class="btn rounded-pill btn-info"
                         (click)="getProductById(product.id); this.display=true">
                     More <i class="fa fa-info-circle ml-2"></i></button>
             </td>
@@ -29,7 +29,7 @@
 
 </div>
 
-<div class="container-fluid table-responsive update" *ngIf="this.selectedProduct?.id" [hidden]="!display">
+<div class="container-fluid table-responsive" *ngIf="this.selectedProduct?.id" [hidden]="!display">
     <h3 class="text-center display-4">Product: {{this.selectedProduct?.name}}</h3>
     <div class="dimensions">
         <table class="table table-borderless">
@@ -50,18 +50,21 @@
                 <td class="quantity">
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <button class="btn btn-danger" type="button"
-                                    (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
-                                    class="fa fa-minus-circle"></i></button>
+                            <div>
+                                <button class="btn btn-danger" type="button" (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                        class="fa fa-minus-circle"></i></button>
+                            </div>
                         </div>
                         <input type="number" class="form-control" placeholder="Update Quantity"
-                               aria-describedby="button-addon4" [(ngModel)]="selectedProduct.qty">
-                        <div class="input-group-append" id="button-addon4">
+                               aria-describedby="add" [(ngModel)]="selectedProduct.qty">
+                        <div class="input-group-append" id="add">
                             <button class="btn btn-success" type="button"
                                     (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
                                     class="fa fa-plus-circle"></i></button>
                         </div>
                     </div>
+
+
                 </td>
                 <td>
                     {{this.selectedProduct.description}}
