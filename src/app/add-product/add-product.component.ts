@@ -57,7 +57,6 @@ export class AddProductComponent implements OnInit {
         this.productService.getProducts().subscribe(
             res => {
                 this.inventory = res;
-                console.log(res);
             }, error => {
                 alert('Error while retrieving data');
             }
@@ -81,7 +80,6 @@ export class AddProductComponent implements OnInit {
             (res) => {
                 res.forEach((element) => {
                     this.locations.push(element);
-                    console.log(element);
                 });
             }, (error) => {
                 alert('Error while getting locations');

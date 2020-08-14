@@ -10,15 +10,15 @@
   --tan: #f5e6e1;
   --yellow: #ffea04;
   // Backgrounds
-  --absurdity: url("https://www.transparenttextures.com/patterns/absurdity.png");
   --crossword: url("https://www.transparenttextures.com/patterns/crossword.png");
-  --nistri: url("https://www.transparenttextures.com/patterns/nistri.png");
+  --alum: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+  --nav: url("https://www.transparenttextures.com/patterns/dark-fish-skin.png");
 }
 
 
 body{
   background-color: var(--tan);
-  background-image: var(--crossword);
+  background-image: var(--alum);
   z-index: 0;
 }
 

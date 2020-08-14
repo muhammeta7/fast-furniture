@@ -7,16 +7,16 @@ h3{
 .flex-container{
   margin: 5% auto;
   padding: 4% 5%;
-  background-image: url("https://www.transparenttextures.com/patterns/crossword.png");
-  background-color: var(--tan);
+  background-image: var(--crossword);
+  background-color: var(--orange);
   width: 80%;
-  z-index: 2;
+  z-index: 50;
   box-shadow: inset 0 0 5px 5px var(--blue);
 }
 
 .create-button{
   background-color: var(--blue);
-  background-image: url("https://www.transparenttextures.com/patterns/absurdity.png");
+  background-image: var(--absurdity);
   color: var(--yellow);
   margin-top: 20%;
   padding: 30%;
@@ -33,7 +33,7 @@ h3{
 }
 
 label{
-  color: var(--blue);
+  color: var(--tan);
   margin-top: .3rem;
   font-size: 1.2rem;
 }
