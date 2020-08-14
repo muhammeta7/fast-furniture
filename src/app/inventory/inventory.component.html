@@ -1,7 +1,6 @@
 <div class="container-fluid table-responsive">
-
     <h3 class="text-center display-4">Current Inventory</h3>
-    <table class="table table-bordered table-hover table-striped">
+    <table class="table table-hover table-striped">
         <thead>
         <tr id="product-titles">
             <th>NAME</th>
@@ -30,17 +29,17 @@
 
 </div>
 
-<div class="container-fluid table-responsive" *ngIf="this.selectedProduct?.id" [hidden]="!display">
-    <h3 class="text-center text-white display-4">Product: {{this.selectedProduct?.name}}</h3>
+<div class="container-fluid table-responsive update" *ngIf="this.selectedProduct?.id" [hidden]="!display">
+    <h3 class="text-center display-4">Product: {{this.selectedProduct?.name}}</h3>
     <div class="dimensions">
-        <table class="table table-bordered table-dark">
+        <table class="table table-borderless">
             <thead>
             <tr>
-                <th>Length</th>
-                <th>Width</th>
-                <th>Depth</th>
-                <th>Update Quantity</th>
-                <th>DESCRIPTION</th>
+                <th>L</th>
+                <th>W</th>
+                <th>D</th>
+                <th>QTY</th>
+                <th>INFO</th>
             </tr>
             </thead>
             <tbody>
@@ -48,17 +47,19 @@
                 <td>{{this.selectedProduct.length}}"</td>
                 <td>{{this.selectedProduct.width}}"</td>
                 <td>{{this.selectedProduct.depth}}"</td>
-                <td>
+                <td class="quantity">
                     <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-danger" type="button"
+                                    (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                    class="fa fa-minus-circle"></i></button>
+                        </div>
                         <input type="number" class="form-control" placeholder="Update Quantity"
                                aria-describedby="button-addon4" [(ngModel)]="selectedProduct.qty">
                         <div class="input-group-append" id="button-addon4">
-                            <button class="btn btn-outline-success" type="button"
+                            <button class="btn btn-success" type="button"
                                     (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
                                     class="fa fa-plus-circle"></i></button>
-                            <button class="btn btn-outline-secondary" type="button"
-                                    (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
-                                    class="fa fa-minus-circle"></i></button>
                         </div>
                     </div>
                 </td>
