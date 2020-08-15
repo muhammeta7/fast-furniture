@@ -29,7 +29,6 @@ thead{
   color: var(--yellow);
   background-image: var(--alum);
   background-color: var(--blue);
-  opacity: 20;
 }
 
 tr, td{
@@ -48,13 +47,6 @@ tbody{
   background-color: var(--tan);
 }
 
-//button{
-//  background-color: var(--orange);
-//  background-image: var(--crossword);
-//  padding: 6% 8%;
-//  color: white;
-//}
-
 td{
   vertical-align: 0;
   padding: .7rem;
@@ -62,7 +54,6 @@ td{
 
 #info{
   margin: 5% auto;
-  width: 100%;
   background-color: var(--blue);
   color: var(--yellow);
 }
@@ -72,11 +63,12 @@ td{
 }
 
 .quantity{
-  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .form-control{
   text-align: center;
-  flex: .2 1 auto;
+  margin: 0 auto;
 }
 
