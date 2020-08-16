@@ -37,7 +37,7 @@ export class InventoryComponent implements OnInit {
         this.productService.increaseQuantity(id, qty).subscribe(
             res => {
                 this.selectedProduct.qty += qty;
-                this.router.navigate(['products']);
+                window.location.reload();
             },
             error => {
                 alert('An error has occurred.');
@@ -69,6 +69,14 @@ export class InventoryComponent implements OnInit {
                 alert('An error has occurred.');
             }
         );
+    }
+
+    capitaliseProductName(name: string){
+        if(name.charAt(0) === name.charAt(0).toUpperCase()){
+            return name;
+        } else{
+            return name.charAt(0).toUpperCase() + name.slice(1);
+        }
     }
 
 }

@@ -5,6 +5,7 @@
   background-color: var(--orange);
   width: 90%;
   box-shadow: inset 0 0 5px 5px var(--blue);
+  opacity: 1;
 }
 
 h3{
@@ -19,10 +20,6 @@ h3{
   margin: 1rem auto;
   z-index: 10;
   box-shadow: inset 0 0 2px 2px var(--yellow);
-}
-
-.table td{
-
 }
 
 thead{
@@ -62,13 +59,13 @@ td{
   padding-top: 3%;
 }
 
-.quantity{
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.form-control{
-  text-align: center;
-  margin: 0 auto;
-}
+//.quantity{
+//  display: flex;
+//  flex-wrap: nowrap;
+//}
+//
+//.form-control{
+//  text-align: center;
+//  margin: 0 auto;
+//}
 
