@@ -29,57 +29,68 @@
 
 </div>
 
-<div class="container-fluid table-responsive" *ngIf="this.selectedProduct?.id" [hidden]="!display">
-    <h3 class="text-center display-4">Product: {{this.selectedProduct?.name}}</h3>
-    <div class="dimensions">
-        <table class="table table-borderless">
-            <thead>
-            <tr>
-                <th>L</th>
-                <th>W</th>
-                <th>D</th>
-                <th>QTY</th>
-                <th>INFO</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>{{this.selectedProduct.length}}"</td>
-                <td>{{this.selectedProduct.width}}"</td>
-                <td>{{this.selectedProduct.depth}}"</td>
-                <td class="quantity">
-                    <div class="btn-group">
-                        <label class="btn btn-danger"
-                               btnCheckbox tabindex="0" role="button" (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
-                                class="fa fa-minus-circle"></i></label>
-                        <input type="number" class="form-control" placeholder="Update Quantity"
-                               aria-describedby="add" [(ngModel)]="selectedProduct.qty">
-                        <label class="btn btn-success"
-                               btnCheckbox tabindex="0" role="button" (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
-                                class="fa fa-plus-circle"></i></label>
-                    </div>
-
-                </td>
-                <td>
-                    {{this.selectedProduct.description}}
-                </td>
-            </tr>
-            </tbody>
-        </table>
-
-    </div>
-</div>
-
-
-<div class="container-fluid table-responsive" *ngIf="this.selectedProduct?.id" [hidden]="!display">
+<div class="container-fluid" *ngIf="this.selectedProduct?.id" [hidden]="!display">
+    <h3 class="text-center display-4">Product Info</h3>
     <div class="card">
-        <div class="card-header">
-            <h5 class="card-title">{{capitaliseProductName(this.selectedProduct.name)}}</h5>
+        <div class="card-header text-center">
+            <h6 class="card-title">{{capitaliseProductName(this.selectedProduct.name)}}</h6>
         </div>
         <div class="card-body">
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+            <div class="row">
+
+                <div class="col-sm-8 table-responsive">
+                    <h6 class="text-center display-4 text-black-50">Dimensions</h6>
+                    <table class="table table-borderless">
+                        <thead>
+                        <tr>
+                            <th>Length</th>
+                            <th>Width</th>
+                            <th>Depth</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{this.selectedProduct.length}}"</td>
+                            <td>{{this.selectedProduct.width}}"</td>
+                            <td>{{this.selectedProduct.depth}}"</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="col-sm-4">
+                    <h6 class="text-center display-4 text-black-50">Update Qty</h6>
+                    <div class="row">
+                        <input type="number" class="form-control" placeholder="Update Quantity"
+                               aria-describedby="add" [(ngModel)]="selectedProduct.qty">
+                    </div>
+                    <div class="row update">
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-lg btn-danger"
+                                    (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)">Remove
+                                <i class="fa fa-minus-circle"></i></button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button type="button" class="btn btn-lg btn-success"
+                                    (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)">Add
+                                <i class="fa fa-plus-circle"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <h6 class="text-center display-4 text-black-50">Product Description</h6>
+            </div>
+            <div class="row">
+                    <p>{{this.selectedProduct.description}}</p>
+            </div>
+
         </div>
+
     </div>
+
 </div>
 

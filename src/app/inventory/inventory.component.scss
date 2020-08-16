@@ -11,9 +11,12 @@
 h3{
   padding-bottom: 2%;
   color: white;
-  font-size: 2.5rem;
 }
 
+h6{
+  font-size: 2.5rem;
+  margin: 0 auto;
+}
 .table{
   text-align: center;
   width: 90%;
@@ -22,10 +25,16 @@ h3{
   box-shadow: inset 0 0 2px 2px var(--yellow);
 }
 
-thead{
+thead, .card-header{
   color: var(--yellow);
   background-image: var(--alum);
   background-color: var(--blue);
+}
+
+.card{
+  border: none;
+  width: 90%;
+  margin: 0 auto;
 }
 
 tr, td{
@@ -59,13 +68,13 @@ td{
   padding-top: 3%;
 }
 
-//.quantity{
-//  display: flex;
-//  flex-wrap: nowrap;
-//}
-//
-//.form-control{
-//  text-align: center;
-//  margin: 0 auto;
-//}
 
+.form-control{
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.update{
+  margin: 0 auto;
+}
