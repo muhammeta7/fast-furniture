@@ -10,25 +10,17 @@
   --tan: #f5e6e1;
   --yellow: #ffea04;
 
-  // Global Second Scheme
-  //--red: #d71b3b;
-  //--yel: #e8d71e;
-  //--cyan: #16acea;
-  //--purple: #4203c9;
-
-
   // Backgrounds
   --crossword: url("https://www.transparenttextures.com/patterns/crossword.png");
   --alum: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
   --nav: url("https://www.transparenttextures.com/patterns/black-linen.png");
-  --brick: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+  --darkalum: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
 }
 
 
 body{
   background-color: var(--tan);
-  background-image: var(--crossword);
-  z-index: 0;
+  background-image: var(--darkalum);
 }
 
 

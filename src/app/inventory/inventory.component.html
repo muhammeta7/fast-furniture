@@ -48,20 +48,15 @@
                 <td>{{this.selectedProduct.width}}"</td>
                 <td>{{this.selectedProduct.depth}}"</td>
                 <td class="quantity">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div>
-                                <button class="btn btn-danger" type="button" (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
-                                        class="fa fa-minus-circle"></i></button>
-                            </div>
-                        </div>
+                    <div class="btn-group">
+                        <label class="btn btn-danger"
+                               btnCheckbox tabindex="0" role="button" (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                class="fa fa-minus-circle"></i></label>
                         <input type="number" class="form-control" placeholder="Update Quantity"
                                aria-describedby="add" [(ngModel)]="selectedProduct.qty">
-                        <div class="input-group-append" id="add">
-                            <button class="btn btn-success" type="button"
-                                    (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
-                                    class="fa fa-plus-circle"></i></button>
-                        </div>
+                        <label class="btn btn-success"
+                               btnCheckbox tabindex="0" role="button" (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                class="fa fa-plus-circle"></i></label>
                     </div>
 
                 </td>
@@ -72,6 +67,19 @@
             </tbody>
         </table>
 
+    </div>
+</div>
+
+
+<div class="container-fluid table-responsive" *ngIf="this.selectedProduct?.id" [hidden]="!display">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">{{capitaliseProductName(this.selectedProduct.name)}}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
     </div>
 </div>
 
