@@ -50,7 +50,7 @@ export class InventoryComponent implements OnInit {
             res => {
                 if (res.qty - qty >= 0){
                     this.selectedProduct.qty -= qty;
-                    this.router.navigate(['products']);
+                    window.location.reload();
                 }
             },
             error => {
