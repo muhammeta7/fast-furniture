@@ -12,6 +12,7 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
 import {ProductInfoComponent} from './product-info/product-info.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ButtonsModule} from 'ngx-bootstrap/buttons';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
         HttpClientModule,
         FormsModule,
         BrowserAnimationsModule,
-        ModalModule.forRoot()
+        ModalModule.forRoot(),
+        ButtonsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

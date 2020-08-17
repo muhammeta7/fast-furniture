@@ -5,7 +5,6 @@
   background-color: var(--orange);
   width: 90%;
   box-shadow: inset 0 0 5px 5px var(--blue);
-  opacity: 1;
 }
 
 h3{
@@ -14,31 +13,26 @@ h3{
 }
 
 h6{
-  font-size: 2.5rem;
-  margin: 0 auto;
+  font-size: 2.2rem;
 }
+
+// Table Styling
 .table{
   text-align: center;
   width: 90%;
   margin: 1rem auto;
   z-index: 10;
-  box-shadow: inset 0 0 2px 2px var(--yellow);
 }
 
 thead, .card-header{
-  color: var(--yellow);
+  color: white;
   background-image: var(--alum);
   background-color: var(--blue);
 }
 
-.card{
-  border: none;
-  width: 90%;
-  margin: 0 auto;
-}
-
 tr, td{
   border-top: 0;
+  font-size: 1.2rem;
 }
 
 tr th{
@@ -49,7 +43,7 @@ tr th{
 
 tbody{
   color: var(--blue);;
- //background-image: var(--crossword);
+  background-image: var(--crossword);
   background-color: var(--tan);
 }
 
@@ -58,23 +52,33 @@ td{
   padding: .7rem;
 }
 
-#info{
-  margin: 5% auto;
-  background-color: var(--blue);
-  color: var(--yellow);
+// Card
+.card{
+  border: none;
+  width: 90%;
+  margin: 0 auto;
+  background-image: var(--darkalum);
+  background-color: var(--tan);
 }
 
-#info h3{
-  padding-top: 3%;
+.card-title{
+  font-size: 2.2rem;
 }
-
 
 .form-control{
   text-align: center;
-  margin: 0 auto;
 }
 
-
-.update{
+.input-group{
   margin: 0 auto;
+  width: 50%;
+  display: flex;;
+}
+
+.btn{
+  padding: .375rem 1.5rem;
+}
+
+.description{
+  font-size: 1.2rem;
 }

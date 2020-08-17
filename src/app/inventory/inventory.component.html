@@ -11,8 +11,8 @@
             <th>DETAILS</th>
         </tr>
         </thead>
-        <tbody>
-        <tr *ngFor="let product of inventory">
+        <tbody *ngFor="let product of inventory">
+        <tr>
             <td>{{product.name}}</td>
             <td>{{product.abbreviation}}</td>
             <td>{{product.location}}</td>
@@ -23,74 +23,78 @@
                         (click)="getProductById(product.id); this.display=true">
                     More <i class="fa fa-info-circle ml-2"></i></button>
             </td>
+
+        </tr>
+        <tr *ngIf="this.selectedProduct?.id === product.id" [hidden]="!display">
+            <td class="own-row" colspan="6">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <h6 class="card-title">{{capitaliseProductName(this.selectedProduct.name)}}</h6>
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-sm-4 table-responsive">
+                                    <h6 class="text-center display-4">Dimensions</h6>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                        <tr>
+                                            <th>Length</th>
+                                            <th>Width</th>
+                                            <th>Depth</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>{{this.selectedProduct.length}}"</td>
+                                            <td>{{this.selectedProduct.width}}"</td>
+                                            <td>{{this.selectedProduct.depth}}"</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <h6 class="text-center display-4 mb-4">Update Qty</h6>
+                                    <div class="row input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-danger"
+                                                    (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                                    class="fa fa-minus-circle"></i></button>
+                                        </div>
+                                        <label for="qty2"></label>
+                                        <input type="number" id="qty2" class="form-control" placeholder="Update Quantity"
+                                               aria-describedby="add" [(ngModel)]="selectedProduct.qty">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-success"
+                                                    (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                                    class="fa fa-plus-circle"></i></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="col-sm-12">
+                                        <h6 class="display-4">Description</h6>
+                                    </div>
+                                    <div class="col-sm-12 description">
+                                        <p>{{this.selectedProduct.description}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+            </td>
         </tr>
         </tbody>
     </table>
-
 </div>
 
-<div class="container-fluid" *ngIf="this.selectedProduct?.id" [hidden]="!display">
-    <h3 class="text-center display-4">Product Info</h3>
-    <div class="card">
-        <div class="card-header text-center">
-            <h6 class="card-title">{{capitaliseProductName(this.selectedProduct.name)}}</h6>
-        </div>
-        <div class="card-body">
 
-            <div class="row">
 
-                <div class="col-sm-8 table-responsive">
-                    <h6 class="text-center display-4 text-black-50">Dimensions</h6>
-                    <table class="table table-borderless">
-                        <thead>
-                        <tr>
-                            <th>Length</th>
-                            <th>Width</th>
-                            <th>Depth</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>{{this.selectedProduct.length}}"</td>
-                            <td>{{this.selectedProduct.width}}"</td>
-                            <td>{{this.selectedProduct.depth}}"</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
 
-                <div class="col-sm-4">
-                    <h6 class="text-center display-4 text-black-50">Update Qty</h6>
-                    <div class="row">
-                        <input type="number" class="form-control" placeholder="Update Quantity"
-                               aria-describedby="add" [(ngModel)]="selectedProduct.qty">
-                    </div>
-                    <div class="row update">
-                        <div class="col-sm-6">
-                            <button type="button" class="btn btn-lg btn-danger"
-                                    (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)">Remove
-                                <i class="fa fa-minus-circle"></i></button>
-                        </div>
-                        <div class="col-sm-6">
-                            <button type="button" class="btn btn-lg btn-success"
-                                    (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)">Add
-                                <i class="fa fa-plus-circle"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <h6 class="text-center display-4 text-black-50">Product Description</h6>
-            </div>
-            <div class="row">
-                    <p>{{this.selectedProduct.description}}</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
 
