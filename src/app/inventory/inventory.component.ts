@@ -71,7 +71,7 @@ export class InventoryComponent implements OnInit {
         );
     }
 
-    capitaliseProductName(name: string){
+    capitaliseFirstLetter(name: string){
         if(name.charAt(0) === name.charAt(0).toUpperCase()){
             return name;
         } else{
