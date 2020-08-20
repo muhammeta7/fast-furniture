@@ -1,22 +1,22 @@
 <div class="flex-container">
-    <h3 class="text-center display-4">Add New Product</h3>
+
     <div class="form_container">
         <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createProduct()" novalidate class="product">
+            <h3 class="text-center display-4">ADD NEW PRODUCT</h3>
 
             <div class="row">
                 <div class="col-sm-8">
                     <label for="name">Product Name</label>
                     <input type="text" id="name" name="name" class="form-control rounded-pill"
                            [(ngModel)]="product.name" #name="ngModel"
-                           [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2"
-                           maxlength="32"/>
+                           [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2" maxlength="32"/>
                 </div>
 
-                <div class="form-group col-sm-4">
-                    <label for="abbr">Abbreviation</label>
-                    <input type="text" id="abbr" name="abbr" class="form-control rounded-pill"
+                <div class="col-sm-4">
+                    <label for="abbreviation">Abbreviation</label>
+                    <input type="text" id="abbreviation" name="abbreviation" class="form-control rounded-pill"
                            [(ngModel)]="product.abbreviation"
-                           #abbr="ngModel" [ngClass]="{ 'is-invalid': f.submitted && abbr.invalid }" required
+                           #abbreviation="ngModel" [ngClass]="{ 'is-invalid': f.submitted && abbreviation.invalid }" required
                            minlength="2" maxlength="5"/>
                 </div>
 
@@ -74,7 +74,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <label for="description">Product Description</label>
-                    <textarea class="form-control rounded-pill" id="description" name="description"
+                    <textarea class="form-control" id="description" name="description"
                               [(ngModel)]="product.description"
                               #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.invalid }"
                               required minlength="2" maxlength="300">
@@ -84,17 +84,14 @@
 
             <div class="d-flex justify-content-center">
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-lg rounded-pill create-button" [disabled]="!f.form.valid">
-                        Add Product<span> <i class="fa fa-hand-pointer-o ml-2"></i></span>
+                    <button type="submit" class="btn btn-lg btn-success rounded-pill create-button" [disabled]="!f.form.valid">
+                        <i class="fa fa-plus-circle fa-3x"></i>
                     </button>
                 </div>
             </div>
 
         </form>
 
-<!--        <div>-->
-<!--            <app-upload-images></app-upload-images>-->
-<!--        </div>-->
     </div>
 
 </div>

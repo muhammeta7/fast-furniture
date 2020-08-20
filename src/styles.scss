@@ -2,19 +2,27 @@
 @import url(~bootstrap/dist/css/bootstrap.min.css);
 @import url(~font-awesome/css/font-awesome.min.css);
 
-// Global Color Scheme
+
 :root{
+  // Global Color Scheme
   --blue:  #1e3d59;
-  --orange:  rgba(255, 110, 64, 0.76);
+  --orange: rgba(255, 110, 64, 0.76);
   --tan: #f5e6e1;
   --yellow: #ffea04;
+
+  // Backgrounds
+  --crossword: url("https://www.transparenttextures.com/patterns/crossword.png");
+  --alum: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+  --nav: url("https://www.transparenttextures.com/patterns/black-linen.png");
+  --darkalum: url("https://www.transparenttextures.com/patterns/brushed-alum-dark.png");
 }
+
 
 body{
   background-color: var(--tan);
-  background-image: url("https://www.transparenttextures.com/patterns/nistri.png");
+  background-image: var(--darkalum);
 }
 
 
-
-
+html, body { height: 100%; }
+//body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

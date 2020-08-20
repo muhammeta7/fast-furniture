@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../services/product.service';
 import {Product} from '../add-product/model/product';
+import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-inventory',
@@ -10,6 +12,10 @@ import {Product} from '../add-product/model/product';
 export class InventoryComponent implements OnInit {
 
     inventory: Product[] = [];
+    selectedProduct: Product;
+    display: boolean;
+    quantity = 1;
+
 
     constructor(private productService: ProductService) {
     }
@@ -18,8 +24,7 @@ export class InventoryComponent implements OnInit {
         this.getProducts();
     }
 
-    // @ts-ignore
-    public getProducts(): Product[] {
+    getProducts() {
         this.productService.getProducts().subscribe(
             res => {
                 this.inventory = res;
@@ -27,6 +32,53 @@ export class InventoryComponent implements OnInit {
                 alert('Error while retrieving data');
             }
         );
+    }
+
+
+    increaseQuantity(id: number, qty: number){
+        this.productService.increaseQuantity(id, qty).subscribe(
+            res => {
+                this.selectedProduct.qty += qty;
+                window.location.reload();
+            },
+            error => {
+                alert('An error has occurred.');
+            }
+        );
+    }
+
+    decreaseQuantity(id: number, qty: number){
+        this.productService.decreaseQuantity(id, qty).subscribe(
+            res => {
+                if (res.qty - qty >= 0){
+                    this.selectedProduct.qty -= qty;
+                    window.location.reload();
+                }
+            },
+            error => {
+                alert('An error has occurred.');
+            }
+        );
+    }
+
+    getProductById(id: number) {
+        this.productService.getProductById(id).subscribe(
+            res => {
+                this.selectedProduct = res;
+                console.log(res);
+            },
+            error => {
+                alert('An error has occurred.');
+            }
+        );
+    }
+
+    capitaliseFirstLetter(name: string){
+        if(name.charAt(0) === name.charAt(0).toUpperCase()){
+            return name;
+        } else{
+            return name.charAt(0).toUpperCase() + name.slice(1);
+        }
     }
 
 }
