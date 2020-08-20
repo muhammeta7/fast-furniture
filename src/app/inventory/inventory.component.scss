@@ -18,6 +18,11 @@ h6{
   padding: 2%;
 }
 
+h5{
+  font-size: 2.4rem;
+  color: var(--orange);
+}
+
 // Table Styling
 .table{
   text-align: center;
@@ -30,28 +35,27 @@ thead{
   color: white;
   background-image: var(--crossword);
   background-color: var(--blue);
-  padding: 2.1%;
 }
 
-tr, td{
-  border-top: 0;
+th{
+  padding: 1.5% 0;
   font-size: 1.2rem;
 }
 
-td{
-  vertical-align: 0;
-  padding: .7rem;
+tr, td{
+  font-size: 1rem;
+  padding: 1.5%;
 }
 
 .inventory:hover{
-  box-shadow: inset 0 0 5px 5px var(--yellow);
+  //box-shadow: inset 0 0 5px 5px white;
 }
+
 
 tbody{
   color: var(--blue);;
   background-color: var(--tan);
 }
-
 
 // Card
 .card{
@@ -67,11 +71,28 @@ tbody{
 
 .input-group{
   margin: 0 auto;
-  display: flex;;
 }
 
 .btn{
-  padding: .375rem 1.2rem;
+  padding: .375rem .75rem;
+  background-image: var(--crossword);
+  background-color: var(--blue);
+}
+
+.plus:hover{
+  background-image: var(--crossword);
+  background-color: green;
+  font-size: 1.2rem;
+}
+
+.minus:hover{
+  background-image: var(--crossword);
+  background-color: red;
+  font-size: 1.2rem;
+}
+
+i{
+  color: white;
 }
 
 .description{
@@ -81,22 +102,26 @@ tbody{
 .info{
   background-image: var(--alum);
   background-color: var(--blue);
-  box-shadow: inset 0 0 5px 5px var(--yellow);
+  box-shadow: inset 0 0 5px 5px var(--blue);
+  z-index: -1;
 }
 
-.info:hover{
-  background-image: var(--alum);
-  background-color: var(--blue);
-  box-shadow: none;
-}
+//.info:hover{
+//  background-image: var(--alum);
+//  background-color: var(--blue);
+//  box-shadow: none;
+//}
 
 .prodInfo{
-  box-shadow: inset 0 0 5px 5px var(--yellow);
   padding: 1.5%;
-  background-image: var(--alum);
+  background-image: var(--crossword);
   background-color: var(--orange);
   margin: 1% auto;
   z-index: 10;
+}
+
+.prodInfo:hover{
+  box-shadow: 2px 6px 4px var(--white);
 }
 
 .prod{

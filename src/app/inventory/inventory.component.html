@@ -1,16 +1,16 @@
 <div class="container-fluid table-responsive">
-    <h3 class="text-center display-4">Inventory</h3>
-    <table class="table table-hover">
+    <h3 class="text-center text-white display-4">Inventory</h3>
+    <table class="table table-hover table-borderless">
         <thead>
         <tr id="product-titles">
             <th>NAME</th>
             <th>LOC</th>
-            <th>CATEGORY</th>
+            <th>CAT</th>
             <th>QTY</th>
         </tr>
         </thead>
-        <tbody *ngFor="let product of inventory">
-        <tr (click)="getProductById(product.id); this.display=true" class="inventory">
+        <tbody *ngFor="let product of inventory" class="inventory">
+        <tr (click)="getProductById(product.id); this.display=true">
             <td>{{product.name}}</td>
             <td>{{product.location}}</td>
             <td>{{product.category}}</td>
@@ -19,14 +19,12 @@
         <tr *ngIf="this.selectedProduct?.id === product.id" [hidden]="!display" class="info">
             <td colspan="5">
                     <div class="card">
-                        <h5 class="text-center text-white display-4">{{this.selectedProduct.name}}</h5>
+                        <h5 class="text-center display-4 mt-3">{{this.selectedProduct.name}}</h5>
                         <div class="card-body">
-
                             <div class="row prod">
-<!--                                <div class="col-sm-1"></div>-->
-                                <div class="col-sm-5 table-responsive prodInfo">
+                                <div class="col-sm-4 table-responsive prodInfo mb-3">
                                     <h6 class="text-center text-white display-4">Details</h6>
-                                    <table class="table">
+                                    <table class="table table-borderless">
                                         <thead>
                                         <tr>
                                             <th>ABBR</th>
@@ -46,44 +44,34 @@
                                     </table>
                                 </div>
 
-                                <div class="col-sm-2 prodInfo">
-                                    <h6 class="text-center text-white display-4 mb-4">Update Qty</h6>
-                                    <div class="row input-group">
+                                <div class="col-sm-3 prodInfo mb-3">
+                                    <h6 class="text-center text-white display-4 mb-4">Quantity</h6>
+                                    <div class="row input-group mb-3">
                                         <div class="input-group-prepend">
-                                            <button class="btn btn-danger"
+                                            <button class="btn minus"
                                                     (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
                                                     class="fa fa-minus-circle"></i></button>
                                         </div>
                                         <label for="qty2"></label>
-                                        <input type="number" id="qty2" class="form-control" placeholder="Update Quantity"
-                                               aria-describedby="add" [(ngModel)]="selectedProduct.qty">
+                                        <input type="number" id="qty2" class="form-control" placeholder="Update Quantity" [(ngModel)]="selectedProduct.qty">
                                         <div class="input-group-append">
-                                            <button class="btn btn-success"
+                                            <button class="btn plus"
                                                     (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
                                                     class="fa fa-plus-circle"></i></button>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="col-sm-4 prodInfo">
                                     <div class="col-sm-12">
                                         <h6 class="display-4 text-white text-center">Description</h6>
                                     </div>
-                                    <div class="col-sm-12 description text-white text-left">
-                                        <p>{{this.selectedProduct.description}}</p>
+                                    <div class="col-sm-12 description text-left">
+                                        <p class="text-white">{{this.selectedProduct.description}}</p>
                                     </div>
                                 </div>
 
-<!--                                <div class="col-sm-1"></div>-->
-
-<!--                                <div class="col-sm-12">-->
-
-<!--                                </div>-->
-
                             </div>
-
                         </div>
-
                     </div>
             </td>
         </tr>

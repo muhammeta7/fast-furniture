@@ -14,8 +14,10 @@ export class InventoryComponent implements OnInit {
     inventory: Product[] = [];
     selectedProduct: Product;
     display: boolean;
+    quantity = 1;
 
-    constructor(private productService: ProductService, private router: Router) {
+
+    constructor(private productService: ProductService) {
     }
 
     ngOnInit() {
