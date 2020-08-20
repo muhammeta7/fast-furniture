@@ -13,6 +13,7 @@ import {ProductInfoComponent} from './product-info/product-info.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import { CheckBundleComponent } from './check-bundle/check-bundle.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import {ButtonsModule} from 'ngx-bootstrap/buttons';
         InventoryComponent,
         UploadImagesComponent,
         ProductInfoComponent,
+        CheckBundleComponent,
     ],
     imports: [
         BrowserModule,
