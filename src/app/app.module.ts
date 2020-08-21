@@ -14,6 +14,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonsModule} from 'ngx-bootstrap/buttons';
 import { CheckBundleComponent } from './check-bundle/check-bundle.component';
+import { CreateBundleComponent } from './create-bundle/create-bundle.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CheckBundleComponent } from './check-bundle/check-bundle.component';
         UploadImagesComponent,
         ProductInfoComponent,
         CheckBundleComponent,
+        CreateBundleComponent,
     ],
     imports: [
         BrowserModule,
