@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Bundle} from '../check-bundle/models/bundle';
+import {Bundle} from '../create-bundle/models/bundle';
 import {Observable} from 'rxjs';
 
 @Injectable({
