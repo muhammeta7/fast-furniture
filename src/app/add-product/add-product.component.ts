@@ -55,7 +55,7 @@ export class AddProductComponent implements OnInit {
 
     getProducts() {
         this.productService.getProducts().subscribe(
-            res => {
+            (res) => {
                 this.inventory = res;
             }, error => {
                 alert('Error while retrieving data');
