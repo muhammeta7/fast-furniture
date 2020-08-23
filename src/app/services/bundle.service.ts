@@ -16,6 +16,10 @@ export class BundleService {
         return this.http.post<Bundle>(this.BASE_URL, bundle);
     }
 
+    getBundles(): Observable<Bundle[]> {
+        return this.http.get<Bundle[]>(this.BASE_URL);
+    }
+
     addToBundle(bundleId: number, productId: number, qty: number) {
         const url = `${this.BASE_URL}/${bundleId}/add`;
         const param = new FormData();
