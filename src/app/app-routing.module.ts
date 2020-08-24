@@ -10,11 +10,11 @@ import {CreateBundleComponent} from './create-bundle/create-bundle.component';
 
 const routes: Routes = [
     {path: 'add', component: AddProductComponent},
-    {path: 'products', component: InventoryComponent},
+    {path: 'inventory', component: InventoryComponent},
     {path: 'image', component: UploadImagesComponent},
     {path: 'new', component: AddImagesComponent},
     {path: 'info', component: ProductInfoComponent},
-    {path: 'bundles', component: CreateBundleComponent},
+    {path: 'bundles/add', component: CreateBundleComponent},
     {path: '' , component: InventoryComponent}
 ];
 
