@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Bundle} from '../create-bundle/models/bundle';
 import {Observable} from 'rxjs';
+import {observableToBeFn} from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
     providedIn: 'root'
@@ -18,6 +19,10 @@ export class BundleService {
 
     getBundles(): Observable<Bundle[]> {
         return this.http.get<Bundle[]>(this.BASE_URL);
+    }
+
+    getBundleById(id: number): Observable<Bundle> {
+        return this.http.get<Bundle>(this.BASE_URL + '/' + id);
     }
 
     addToBundle(bundleId: number, productId: number, qty: number) {

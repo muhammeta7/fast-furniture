@@ -1,5 +1,5 @@
 import {Product} from '../../add-product/model/product';
-import {Bundle} from './bundle';
+import {Bundle} from '../../create-bundle/models/bundle';
 
 export interface Piece {
     id: number;

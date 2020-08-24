@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BundleService} from '../services/bundle.service';
 import {Bundle} from './models/bundle';
-import {Piece} from './models/piece';
+import {Piece} from '../add-bundle-piece/model/piece';
 import {Router} from '@angular/router';
 
 @Component({
