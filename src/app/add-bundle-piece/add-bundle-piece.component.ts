@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BundleService} from '../services/bundle.service';
 import {Piece} from './model/piece';
-import {Product} from '../add-product/model/product';
-import {Bundle} from '../create-bundle/models/bundle';
 
 @Component({
   selector: 'app-add-bundle-piece',

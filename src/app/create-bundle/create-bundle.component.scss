@@ -1,0 +1,28 @@
+h3{
+  padding-bottom: 2%;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.flex-container{
+  margin: 5% auto;
+  padding: 4% 5%;
+  background-image: var(--crossword);
+  background-color: var(--orange);
+  width: 80%;
+  z-index: 50;
+  box-shadow: inset 0 0 5px 5px var(--blue);
+}
+
+//.row{
+//  margin: 0 auto;
+//  width: 90%;
+//  text-align: center;
+//}
+
+
+label{
+  color: var(--tan);
+  margin-top: .3rem;
+  font-size: 1.2rem;
+}
