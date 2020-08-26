@@ -14,15 +14,30 @@ h3{
   box-shadow: inset 0 0 5px 5px var(--blue);
 }
 
-//.row{
-//  margin: 0 auto;
-//  width: 90%;
-//  text-align: center;
-//}
-
+.input-group{
+  width: 75%;
+  margin: 0 auto;
+}
 
 label{
-  color: var(--tan);
+  color: white;
   margin-top: .3rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.form-control{
+  font-size: 1.5rem;
+}
+
+button{
+  margin: 0 auto;
+  padding: 1% 4.5%;
+  color: white;
+  background-color: var(--blue);
+  background-image: var(--crossword);
+  z-index: 2;
+}
+
+button:hover{
+  background-color: green;
 }
