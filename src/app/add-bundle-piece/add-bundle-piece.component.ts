@@ -20,7 +20,8 @@ export class AddBundlePieceComponent implements OnInit {
     inventory: Product[];
     bundle: Bundle;
 
-    constructor(private bundleService: BundleService, private productService: ProductService) {}
+    constructor(private bundleService: BundleService, private productService: ProductService) {
+    }
 
     ngOnInit() {
         this.getProducts();
@@ -35,5 +36,6 @@ export class AddBundlePieceComponent implements OnInit {
             }
         );
     }
+
 
 }

@@ -17,7 +17,7 @@ const routes: Routes = [
     {path: 'info', component: ProductInfoComponent},
     {path: 'bundles/:id/add', component: CreateBundleComponent},
     {path: 'bundles/add/piece', component: AddBundlePieceComponent},
-    {path: '' , component: InventoryComponent}
+    {path: '', component: InventoryComponent}
 ];
 
 @NgModule({
