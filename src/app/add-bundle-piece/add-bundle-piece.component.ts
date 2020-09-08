@@ -18,7 +18,9 @@ export class AddBundlePieceComponent implements OnInit {
         defaultQty: 1
     };
     inventory: Product[];
+    product: Product;
     bundle: Bundle;
+    qty: number;
 
     constructor(private bundleService: BundleService, private productService: ProductService) {
     }
@@ -37,5 +39,16 @@ export class AddBundlePieceComponent implements OnInit {
         );
     }
 
+    addPieceToBundle(){
+        this.bundleService.addToBundle(this.bundle.id, this.product.id, this.qty).subscribe(
+            (res) => {
+                this.bundle = res;
+                console.log(res);
+                window.location.reload();
+            }, error => {
+                alert('An error has occurred.');
+            }
+        );
+    }
 
 }
