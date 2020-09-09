@@ -15,8 +15,8 @@ const routes: Routes = [
     {path: 'image', component: UploadImagesComponent},
     {path: 'new', component: AddImagesComponent},
     {path: 'info', component: ProductInfoComponent},
-    {path: 'bundles/:id/add', component: CreateBundleComponent},
-    {path: 'bundles/add/piece', component: AddBundlePieceComponent},
+    {path: 'bundles/create', component: CreateBundleComponent},
+    {path: 'bundles/:id/add', component: AddBundlePieceComponent},
     {path: '', component: InventoryComponent}
 ];
 

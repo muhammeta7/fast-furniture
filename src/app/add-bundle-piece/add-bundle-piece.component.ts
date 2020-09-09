@@ -4,6 +4,9 @@ import {Piece} from './model/piece';
 import {Bundle} from '../create-bundle/models/bundle';
 import {Product} from '../add-product/model/product';
 import {ProductService} from '../services/product.service';
+import {ActivatedRoute} from '@angular/router';
+import {switchMap} from 'rxjs/operators';
+import {Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-add-bundle-piece',
@@ -20,15 +23,28 @@ export class AddBundlePieceComponent implements OnInit {
     inventory: Product[];
     product: Product;
     bundle: Bundle;
-    bundles: Bundle[];
     qty: number;
+    private routeSub: Subscription;
 
-    constructor(private bundleService: BundleService, private productService: ProductService) {
+    constructor(private bundleService: BundleService, private productService: ProductService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.getProducts();
-        this.getBundles();
+        this.routeSub = this.route.params.subscribe(params => {
+            console.log(params);
+        });
+    }
+
+    getBundleById(){
+        this.bundleService.getBundleById(this.bundle.id).subscribe(
+            (res) => {
+                this.bundle = res;
+                console.log(res.id);
+            }, error => {
+                alert('Error getting bundle.');
+            }
+        );
     }
 
     getProducts() {
@@ -52,15 +68,4 @@ export class AddBundlePieceComponent implements OnInit {
             }
         );
     }
-
-    getBundles() {
-        this.bundleService.getBundles().subscribe(
-            (res) => {
-                this.bundles = res;
-            }, error => {
-                alert('Error getting bundles!');
-            }
-        );
-    }
-
 }
