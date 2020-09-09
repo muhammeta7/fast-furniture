@@ -20,6 +20,7 @@ export class AddBundlePieceComponent implements OnInit {
     inventory: Product[];
     product: Product;
     bundle: Bundle;
+    bundles: Bundle[];
     qty: number;
 
     constructor(private bundleService: BundleService, private productService: ProductService) {
@@ -27,6 +28,7 @@ export class AddBundlePieceComponent implements OnInit {
 
     ngOnInit() {
         this.getProducts();
+        this.getBundles();
     }
 
     getProducts() {
@@ -47,6 +49,16 @@ export class AddBundlePieceComponent implements OnInit {
                 window.location.reload();
             }, error => {
                 alert('An error has occurred.');
+            }
+        );
+    }
+
+    getBundles() {
+        this.bundleService.getBundles().subscribe(
+            (res) => {
+                this.bundles = res;
+            }, error => {
+                alert('Error getting bundles!');
             }
         );
     }
