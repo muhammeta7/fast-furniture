@@ -34,7 +34,7 @@ Application was developed to assist a few friends who just started a new busines
  ###### Upcoming Improvements
   * Incorporate camera phone QR scanner system to easily update inventory.
   * Create customer page with all inventory information with restricted access to certain endpoints. 
-    ** Universal point of contact and documentation of customer interactions and quotes.
+    **Universal point of contact and documentation of customer interactions and quotes.
    
   
   
