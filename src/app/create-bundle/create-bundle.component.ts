@@ -14,6 +14,7 @@ export class CreateBundleComponent implements OnInit {
         id: null,
         name: ''
     };
+    display: boolean;
 
     constructor(private bundleService: BundleService, private router: Router) {
     }
@@ -39,7 +40,6 @@ export class CreateBundleComponent implements OnInit {
                     alert('Product already exists');
                 } else {
                     this.bundles.push(res);
-                    this.router.navigate(['/bundles/' + res.id + '/add']);
                 }
             },
             (error) => {

@@ -2,17 +2,16 @@
 
     <div class="form_container">
         <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && addPieceToBundle()" novalidate class="product">
-            <h3 class="text-center display-4">ADD PC TO BUNDLE</h3>
+            <h3 class="text-center display-4">Current Bundle: {{this.bundle.name}}</h3>
 
             <div class="row">
-
                 <div class="col-sm-6">
                     <label for="product">Product</label>
                     <select id = "product">
                         <option *ngFor="let product of inventory">{{product.name}}</option>
                     </select>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-3 justify-content-center">
                     <label for="qty">Quantity</label>
                     <input type="number" id="qty" name="qty" [(ngModel)]="piece.defaultQty"/>
                 </div>
@@ -22,11 +21,9 @@
                         <button type="submit" class="btn btn-success create-button" [disabled]="!f.form.valid">ADD <i class="fa fa-plus-circle"></i></button>
                     </div>
                 </div>
-
             </div>
-
         </form>
-
     </div>
+
 </div>
 
