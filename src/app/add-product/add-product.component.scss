@@ -14,16 +14,15 @@ h3{
   box-shadow: inset 0 0 5px 5px var(--blue);
 }
 
-.create-button{
+button{
   background-color: var(--blue);
   background-image: var(--absurdity);
-  color: var(--yellow);
+  color: white;
   margin-top: 20%;
-  padding: 30%;
 }
 
 
-.create-button:hover{
+button:hover{
   background-color: green;
   font-size: 1.25rem;
 }

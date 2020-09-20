@@ -1,4 +1,3 @@
-
 <div class="flex-container">
     <div class="form_container">
 
@@ -6,21 +5,20 @@
             <h3 class="text-center display-4">Add New Bundle</h3>
 
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-3 row">
                 <div class="input-group-prepend mr-2">
                     <label for="name" class="text-white">Bundle Name </label>
                 </div>
 
-                    <input type="text" id="name" name="name" class="form-control"
-                           [(ngModel)]="bundle.name" #name="ngModel"
-                           [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2"
-                           maxlength="32">
+                <input type="text" id="name" name="name" class="form-control"
+                       [(ngModel)]="bundle.name" #name="ngModel"
+                       [ngClass]="{ 'is-invalid': f.submitted && name.invalid }" required minlength="2"
+                       maxlength="32">
             </div>
 
             <div class="row">
-                <button type="submit" class="btn btn-lg btn-success rounded-pill"
-                        [disabled]="!f.form.valid">
-                    <i class="fa fa-plus-circle fa-2x">   </i>
+                <button type="submit" class="btn btn-lg"
+                        [disabled]="!f.form.valid"><i class="fa fa-plus-circle fa-2x"></i>
                 </button>
             </div>
         </form>

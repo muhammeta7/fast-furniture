@@ -6,7 +6,7 @@ import {Product} from '../add-product/model/product';
 import {ProductService} from '../services/product.service';
 import {ActivatedRoute} from '@angular/router';
 import {switchMap} from 'rxjs/operators';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-add-bundle-piece',
@@ -24,20 +24,23 @@ export class AddBundlePieceComponent implements OnInit {
     product: Product;
     bundle: Bundle;
     qty: number;
-    private routeSub: Subscription;
+    subscribedParam = '';
 
     constructor(private bundleService: BundleService, private productService: ProductService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.getProducts();
-        this.routeSub = this.route.params.subscribe(params => {
-            console.log(params);
-        });
+        this.route.paramMap.subscribe(
+            params => {
+                this.subscribedParam = params.get('id');
+                console.log('Is this what we want    ' + this.subscribedParam);
+            }
+        );
     }
 
-    getBundleById(){
-        this.bundleService.getBundleById(this.bundle.id).subscribe(
+    getBundleById(id: number) {
+        this.bundleService.getBundleById(id).subscribe(
             (res) => {
                 this.bundle = res;
                 console.log(res.id);
@@ -57,7 +60,7 @@ export class AddBundlePieceComponent implements OnInit {
         );
     }
 
-    addPieceToBundle(){
+    addPieceToBundle() {
         this.bundleService.addToBundle(this.bundle.id, this.product.id, this.qty).subscribe(
             (res) => {
                 this.bundle = res;

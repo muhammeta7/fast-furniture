@@ -18,6 +18,7 @@ h3{
   background-color: var(--blue);
   background-image: var(--absurdity);
   color: var(--yellow);
+  margin: 0 auto;
 }
 
 
@@ -26,11 +27,11 @@ h3{
   font-size: 1.25rem;
 }
 
-.row{
-  margin: 0 auto;
-  width: 90%;
-  text-align: center;
-}
+//.row{
+//  margin: 0 auto;
+//  width: 90%;
+//  text-align: center;
+//}
 
 label{
   color: var(--tan);
