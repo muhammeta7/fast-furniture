@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {BundleService} from '../services/bundle.service';
 import {Piece} from './model/piece';
 import {Bundle} from '../create-bundle/models/bundle';
@@ -22,25 +22,22 @@ export class AddBundlePieceComponent implements OnInit {
     };
     inventory: Product[];
     product: Product;
-    bundle: Bundle;
+    @Input() bundle: Bundle;
     qty: number;
-    subscribedParam = '';
+    currentBundleId: number;
 
     constructor(private bundleService: BundleService, private productService: ProductService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.getProducts();
-        this.route.paramMap.subscribe(
-            params => {
-                this.subscribedParam = params.get('id');
-                console.log('Is this what we want    ' + this.subscribedParam);
-            }
+        this.route.params.forEach(
+            param => this.currentBundleId = param.id
         );
     }
 
-    getBundleById(id: number) {
-        this.bundleService.getBundleById(id).subscribe(
+    getBundleById() {
+        this.bundleService.getBundleById(this.currentBundleId).subscribe(
             (res) => {
                 this.bundle = res;
                 console.log(res.id);

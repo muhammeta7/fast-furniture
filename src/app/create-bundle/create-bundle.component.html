@@ -1,7 +1,7 @@
 <div class="flex-container">
-    <div class="form_container">
 
-        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createBundle()" novalidate class="product">
+    <div class="form_container">
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && createBundle();this.display=true" novalidate class="product">
             <h3 class="text-center display-4">Add New Bundle</h3>
 
 
@@ -18,11 +18,16 @@
 
             <div class="row">
                 <button type="submit" class="btn btn-lg"
-                        [disabled]="!f.form.valid"><i class="fa fa-plus-circle fa-2x"></i>
+                    [disabled]="!f.form.valid"><i class="fa fa-plus-circle fa-2x"></i>
                 </button>
             </div>
         </form>
+    </div>
 
+    <div [hidden]="!display">
+        <app-add-bundle-piece
+            [bundle]="bundle"
+        ></app-add-bundle-piece>
     </div>
 
 </div>
