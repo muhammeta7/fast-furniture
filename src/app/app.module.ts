@@ -13,6 +13,8 @@ import {ProductInfoComponent} from './product-info/product-info.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ButtonsModule} from 'ngx-bootstrap/buttons';
+import { CreateBundleComponent } from './create-bundle/create-bundle.component';
+import { AddBundlePieceComponent } from './add-bundle-piece/add-bundle-piece.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import {ButtonsModule} from 'ngx-bootstrap/buttons';
         InventoryComponent,
         UploadImagesComponent,
         ProductInfoComponent,
+        CreateBundleComponent,
+        AddBundlePieceComponent,
     ],
     imports: [
         BrowserModule,

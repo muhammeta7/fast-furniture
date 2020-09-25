@@ -20,7 +20,7 @@ h6{
 
 h5{
   font-size: 2.4rem;
-  color: var(--orange);
+  color: white;
 }
 
 // Table Styling
@@ -45,10 +45,6 @@ th{
 tr, td{
   font-size: 1rem;
   padding: 1.5%;
-}
-
-.inventory:hover{
-  //box-shadow: inset 0 0 5px 5px white;
 }
 
 
@@ -79,16 +75,26 @@ tbody{
   background-color: var(--blue);
 }
 
+.plus{
+  box-shadow: inset 0 0 4px 4px #55ff2f;
+}
+
+.minus{
+  box-shadow: inset 0 0 4px 4px red;
+}
+
 .plus:hover{
   background-image: var(--crossword);
   background-color: green;
   font-size: 1.2rem;
+  box-shadow: none;
 }
 
 .minus:hover{
   background-image: var(--crossword);
   background-color: red;
   font-size: 1.2rem;
+  box-shadow: none;
 }
 
 i{
@@ -102,15 +108,12 @@ i{
 .info{
   background-image: var(--alum);
   background-color: var(--blue);
-  box-shadow: inset 0 0 5px 5px var(--blue);
-  z-index: -1;
 }
 
-//.info:hover{
-//  background-image: var(--alum);
-//  background-color: var(--blue);
-//  box-shadow: none;
-//}
+.info:hover{
+  background-image: var(--alum);
+  background-color: var(--blue);
+}
 
 .prodInfo{
   padding: 1.5%;
@@ -121,7 +124,7 @@ i{
 }
 
 .prodInfo:hover{
-  box-shadow: 2px 6px 4px var(--white);
+  box-shadow: 3px 6px 5px white;
 }
 
 .prod{
