@@ -1,20 +1,56 @@
-<div class="container-fluid">
-  <nav class="navbar navbar-expand-md">
+<!--<div class="container-fluid">-->
+<!--  <nav class="navbar navbar-expand-md">-->
 
-    <a href="#" class="navbar-brand mr-3">Fast Furniture</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <div class="navbar-nav">
-        <a routerLink="/inventory" class="nav-item nav-link">Inventory</a>
-        <a routerLink="/add" class="nav-item nav-link">Add Product</a>
-        <a routerLink="/bundles/create" class="nav-item nav-link">Create Bundle</a>
-      </div>
-<!--      <div class="navbar-nav ml-auto">-->
-<!--        <a href="#" class="nav-item nav-link">Register</a>-->
-<!--        <a href="#" class="nav-item nav-link">Login</a>-->
+<!--    <a href="#" class="navbar-brand mr-3">Fast Furniture</a>-->
+<!--    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">-->
+<!--      <span class="navbar-toggler-icon"></span>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--      <div class="navbar-nav">-->
+<!--        <a routerLink="/inventory" class="nav-item nav-link">Inventory</a>-->
+<!--        <a routerLink="/add" class="nav-item nav-link">Add Product</a>-->
+<!--        <a routerLink="/bundles/create" class="nav-item nav-link">Create Bundle</a>-->
 <!--      </div>-->
-    </div>
-  </nav>
-</div>
+
+<!--&lt;!&ndash;      <div class="navbar-nav ml-auto">&ndash;&gt;-->
+<!--&lt;!&ndash;        <a href="#" class="nav-item nav-link">Register</a>&ndash;&gt;-->
+<!--&lt;!&ndash;        <a href="#" class="nav-item nav-link">Login</a>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</div>-->
+
+<!-- .navbar -->
+<nav class="navbar navbar-full navbar-dark bg-primary">
+  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#mainNavbarCollapse">
+    &#9776;
+  </button>
+  <a class="navbar-brand" href="#">
+    <img class="img-rounded" src="https://placehold.it/32/ffffff?text=B">
+  </a>
+  <div class="collapse navbar-toggleable-md" id="mainNavbarCollapse">
+    <ul class="nav navbar-nav pull-lg-right">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" id="navbarDropdown1" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown1">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- /.navbar -->
