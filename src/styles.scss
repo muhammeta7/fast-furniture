@@ -31,3 +31,16 @@ body{
 
 html, body { height: 100%; }
 //body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+app-navigation {
+  nav {
+    width: 100%;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, sm)) {
+    nav {
+      width: 80%;
+    }
+  }
+}
