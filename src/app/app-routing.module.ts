@@ -12,8 +12,7 @@ import {AddBundlePieceComponent} from './add-bundle-piece/add-bundle-piece.compo
 const routes: Routes = [
     {path: 'add', component: AddProductComponent},
     {path: 'inventory', component: InventoryComponent},
-    {path: 'image', component: UploadImagesComponent},
-    {path: 'new', component: AddImagesComponent},
+    {path: 'image', component: AddImagesComponent},
     {path: 'info', component: ProductInfoComponent},
     {path: 'bundles/create', component: CreateBundleComponent},
     {path: 'bundles/:id/add', component: AddBundlePieceComponent},
