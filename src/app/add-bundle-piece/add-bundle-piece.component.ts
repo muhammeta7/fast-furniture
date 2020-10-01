@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {BundleService} from '../services/bundle.service';
 import {Piece} from './model/piece';
 import {Bundle} from '../create-bundle/models/bundle';
@@ -6,7 +6,7 @@ import {Product} from '../add-product/model/product';
 import {ProductService} from '../services/product.service';
 import {ActivatedRoute} from '@angular/router';
 import {switchMap} from 'rxjs/operators';
-import {Subscription} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-add-bundle-piece',
@@ -22,22 +22,22 @@ export class AddBundlePieceComponent implements OnInit {
     };
     inventory: Product[];
     product: Product;
-    bundle: Bundle;
+    @Input() bundle: Bundle;
     qty: number;
-    private routeSub: Subscription;
+    currentBundleId: number;
 
     constructor(private bundleService: BundleService, private productService: ProductService, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.getProducts();
-        this.routeSub = this.route.params.subscribe(params => {
-            console.log(params);
-        });
+        this.route.params.forEach(
+            param => this.currentBundleId = param.id
+        );
     }
 
-    getBundleById(){
-        this.bundleService.getBundleById(this.bundle.id).subscribe(
+    getBundleById() {
+        this.bundleService.getBundleById(this.currentBundleId).subscribe(
             (res) => {
                 this.bundle = res;
                 console.log(res.id);
@@ -57,7 +57,7 @@ export class AddBundlePieceComponent implements OnInit {
         );
     }
 
-    addPieceToBundle(){
+    addPieceToBundle() {
         this.bundleService.addToBundle(this.bundle.id, this.product.id, this.qty).subscribe(
             (res) => {
                 this.bundle = res;

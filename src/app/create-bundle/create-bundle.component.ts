@@ -14,6 +14,7 @@ export class CreateBundleComponent implements OnInit {
         id: null,
         name: ''
     };
+    display: boolean;
 
     constructor(private bundleService: BundleService, private router: Router) {
     }
