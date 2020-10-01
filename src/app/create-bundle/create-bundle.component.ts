@@ -40,6 +40,7 @@ export class CreateBundleComponent implements OnInit {
                     alert('Product already exists');
                 } else {
                     this.bundles.push(res);
+                    this.router.navigate(['/bundles/' + res.id + '/add']);
                 }
             },
             (error) => {
