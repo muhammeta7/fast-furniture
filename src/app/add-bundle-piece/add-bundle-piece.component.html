@@ -6,14 +6,14 @@
 
             <div class="row">
                 <div class="col-sm-6">
-                    <label for="product">Product</label>
-                    <select id = "product">
-                        <option *ngFor="let product of inventory">{{product.name}}</option>
+                    <label>Product</label>
+                    <select name="product" [(ngModel)]="product" >
+                        <option *ngFor="let ele of inventory" [ngValue]="ele" >{{ele.name}}</option>
                     </select>
                 </div>
                 <div class="col-sm-3">
-                    <label for="qty">Quantity</label>
-                    <input type="number" id="qty" name="qty" [(ngModel)]="piece.defaultQty"/>
+                    <label>Quantity</label>
+                    <input type="number" id="qty" name="qty" [(ngModel)]="qty"/>
                 </div>
 
 <!--                    <label for="category">Product</label>-->
