@@ -23,7 +23,8 @@ export class AddBundlePieceComponent implements OnInit {
     inventory: Product[];
     product: Product;
     bundle: Bundle;
-    qty: number;
+    qty = 1;
+    paramId: number;
     private routeSub: Subscription;
 
     constructor(private bundleService: BundleService, private productService: ProductService, private route: ActivatedRoute) {
@@ -33,6 +34,8 @@ export class AddBundlePieceComponent implements OnInit {
         this.getProducts();
         this.routeSub = this.route.params.subscribe(params => {
             console.log(params);
+            this.paramId = +params['id'].substring(3);
+            console.log(this.paramId);
         });
     }
 
@@ -58,8 +61,10 @@ export class AddBundlePieceComponent implements OnInit {
     }
 
     addPieceToBundle(){
-        this.bundleService.addToBundle(this.bundle.id, this.product.id, this.qty).subscribe(
+        console.log(this.paramId + "/ " + this.product.id +"/ "+ this.qty);
+        this.bundleService.addManyToBundle(this.paramId, this.product.id, this.qty).subscribe(
             (res) => {
+                console.log(this.paramId + "KLSJDLAKSJD" + this.product.id);
                 this.bundle = res;
                 console.log(res);
                 window.location.reload();

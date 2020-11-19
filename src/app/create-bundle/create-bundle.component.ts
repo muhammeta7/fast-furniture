@@ -19,12 +19,15 @@ export class CreateBundleComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getBundles();
+        this.getBundles();        
     }
 
     getBundles() {
         this.bundleService.getBundles().subscribe(
             (res) => {
+                this.bundles = res;
+                console.log(res);
+
                 this.bundles = res;
             }, error => {
                 alert('Error getting bundles!');
