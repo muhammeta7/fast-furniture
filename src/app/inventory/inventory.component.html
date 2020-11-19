@@ -1,31 +1,85 @@
 <div class="container-fluid table-responsive">
-    <h3 class="text-center display-4">Current Inventory</h3>
-    <table class="table table-bordered table-hover table-striped">
+    <h3 class="text-center text-white display-4">Inventory</h3>
+    <table class="table table-hover table-borderless">
         <thead>
-        <tr>
-            <th>Name</th>
-            <th>Abbreviation</th>
-            <th>Location</th>
-            <th>Length</th>
-            <th>Width</th>
-            <th>Depth</th>
-            <th>Category</th>
-            <th>Quantity</th>
-            <th>Description</th>
+        <tr id="product-titles">
+            <th>NAME</th>
+            <th>LOC</th>
+            <th>CAT</th>
+            <th>QTY</th>
         </tr>
         </thead>
-        <tbody>
-        <tr *ngFor="let product of inventory">
+        <tbody *ngFor="let product of inventory" class="inventory">
+        <tr (click)="getProductById(product.id); this.display=true">
             <td>{{product.name}}</td>
-            <td>{{product.abbreviation}}</td>
             <td>{{product.location}}</td>
-            <td>{{product.length}}"</td>
-            <td>{{product.width}}"</td>
-            <td>{{product.depth}}"</td>
             <td>{{product.category}}</td>
             <td>{{product.qty}}</td>
-            <td>{{product.description}}</td>
+        </tr>
+        <tr *ngIf="this.selectedProduct?.id === product.id" [hidden]="!display" class="info">
+            <td colspan="5">
+                    <div class="card">
+                        <h5 class="text-center display-4 mt-3">{{this.selectedProduct.name}}</h5>
+                        <div class="card-body">
+                            <div class="row prod">
+                                <div class="col-sm-4 table-responsive prodInfo mb-3">
+                                    <h6 class="text-center text-white display-4">Details</h6>
+                                    <table class="table table-borderless">
+                                        <thead>
+                                        <tr>
+                                            <th>ABBR</th>
+                                            <th>L</th>
+                                            <th>W</th>
+                                            <th>D</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>{{this.selectedProduct.abbreviation}}</td>
+                                            <td>{{this.selectedProduct.length}}"</td>
+                                            <td>{{this.selectedProduct.width}}"</td>
+                                            <td>{{this.selectedProduct.depth}}"</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="col-sm-3 prodInfo mb-3">
+                                    <h6 class="text-center text-white display-4 mb-4">Quantity</h6>
+                                    <div class="row input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button class="btn minus"
+                                                    (click)="decreaseQuantity(this.selectedProduct.id, this.inputQty)"><i
+                                                    class="fa fa-minus-circle"></i></button>
+                                        </div>
+                                        <label for="qty2"></label>
+                                        <input type="number" id="qty2" class="form-control" placeholder="Update Quantity" [(ngModel)]="inputQty">
+                                        <div class="input-group-append">
+                                            <button class="btn plus"
+                                                    (click)="increaseQuantity(this.selectedProduct.id, this.inputQty)"><i
+                                                    class="fa fa-plus-circle"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 prodInfo">
+                                    <div class="col-sm-12">
+                                        <h6 class="display-4 text-white text-center">Description</h6>
+                                    </div>
+                                    <div class="col-sm-12 description text-left">
+                                        <p class="text-white">{{this.selectedProduct.description}}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+            </td>
         </tr>
         </tbody>
     </table>
 </div>
+
+
+
+
+

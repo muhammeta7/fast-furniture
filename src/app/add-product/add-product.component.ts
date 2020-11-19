@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ProductService} from '../services/product.service';
-import {Product} from './model/product';
 import {Router} from '@angular/router';
+import {Product} from './model/product';
 
 @Component({
     selector: 'app-add-product',
@@ -12,7 +12,6 @@ export class AddProductComponent implements OnInit {
     inventory: Product[] = [];
     categories: string[] = [];
     locations: string[] = [];
-
     product: Product = {
         id: null,
         name: '',
@@ -23,7 +22,8 @@ export class AddProductComponent implements OnInit {
         depth: null,
         qty: null,
         description: '',
-        category: ''
+        category: '',
+        photos: [],
     };
 
     constructor(
@@ -32,6 +32,7 @@ export class AddProductComponent implements OnInit {
     ){}
 
     ngOnInit() {
+        this.getProducts();
         this.getCategories();
         this.getLocations();
     }
@@ -48,6 +49,16 @@ export class AddProductComponent implements OnInit {
             },
             (error) => {
                 alert('An error has occurred while creating product');
+            }
+        );
+    }
+
+    getProducts() {
+        this.productService.getProducts().subscribe(
+            (res) => {
+                this.inventory = res;
+            }, error => {
+                alert('Error while retrieving data');
             }
         );
     }
@@ -69,7 +80,6 @@ export class AddProductComponent implements OnInit {
             (res) => {
                 res.forEach((element) => {
                     this.locations.push(element);
-                    console.log(element);
                 });
             }, (error) => {
                 alert('Error while getting locations');
@@ -77,3 +87,4 @@ export class AddProductComponent implements OnInit {
         );
     }
 }
+

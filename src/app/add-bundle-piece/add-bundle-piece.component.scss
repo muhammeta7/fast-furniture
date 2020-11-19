@@ -18,8 +18,6 @@ h3{
   background-color: var(--blue);
   background-image: var(--absurdity);
   color: var(--yellow);
-  margin-top: 20%;
-  padding: 30%;
 }
 
 
@@ -28,15 +26,10 @@ h3{
   font-size: 1.25rem;
 }
 
-
 .row{
   margin: 0 auto;
   width: 90%;
   text-align: center;
-}
-
-#abbr, #location, #length, #width{
-  margin-right: 2%;
 }
 
 label{
@@ -44,9 +37,3 @@ label{
   margin-top: .3rem;
   font-size: 1.2rem;
 }
-
-
-
-
-
-

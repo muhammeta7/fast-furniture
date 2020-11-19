@@ -9,22 +9,41 @@ import {Observable} from 'rxjs';
 export class ProductService {
     private BASE_URL = 'http://localhost:8080/api/products';
 
-    constructor(private httpClient: HttpClient) {}
-
-    getProducts(): Observable<Product[]> {
-        return this.httpClient.get<Product[]>(this.BASE_URL);
-    }
+    constructor(private http: HttpClient) {}
 
     createProduct(product: Product): Observable<Product>{
-        return this.httpClient.post<Product>(this.BASE_URL, product);
+        return this.http.post<Product>(this.BASE_URL, product);
+    }
+
+    getProductById(id: number): Observable<Product>{
+        return this.http.get<Product>(this.BASE_URL + '/' + id);
+    }
+
+    getProducts(): Observable<Product[]> {
+        return this.http.get<Product[]>(this.BASE_URL);
     }
 
     getCategories(): Observable<string[]>{
-        return this.httpClient.get<string[]>(this.BASE_URL + '/category/index');
+        return this.http.get<string[]>(this.BASE_URL + '/category/index');
     }
 
     getLocations(): Observable<string[]>{
-        return this.httpClient.get<string[]>(this.BASE_URL + '/location/index');
+        return this.http.get<string[]>(this.BASE_URL + '/location/index');
     }
 
+    increaseQuantity(id: number, qty: number){
+        const url = `${this.BASE_URL}/${id}/increase/qty`;
+        const param = new FormData();
+        // @ts-ignore
+        param.append('qty', qty);
+        return this.http.put<Product>(url, param);
+    }
+
+    decreaseQuantity(id: number, qty: number){
+        const url = `${this.BASE_URL}/${id}/decrease/qty`;
+        const param = new FormData();
+        // @ts-ignore
+        param.append('qty', qty);
+        return this.http.put<Product>(url, param);
+    }
 }
