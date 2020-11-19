@@ -36,6 +36,14 @@ export class BundleService {
         return this.http.put<Bundle>(url, param);
     }
 
+
+    addManyToBundle(bundleId: number, productId: number, qty: number) {
+        const url = `${this.BASE_URL}/${bundleId}/addMany`;
+        const productCount = [{productId: productId, qty: qty }];
+
+        return this.http.put<Bundle>(url, productCount);
+    }
+
 }
 
 
