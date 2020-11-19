@@ -1,1 +1,48 @@
-<p>add-bundle-piece works!</p>
+<div class="flex-container">
+
+    <div class="form_container">
+        <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && addPieceToBundle()" novalidate class="product">
+            <h3 class="text-center display-4">ADD PC TO BUNDLE</h3>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>Product</label>
+                    <select name="product" [(ngModel)]="product" >
+                        <option *ngFor="let ele of inventory" [ngValue]="ele" >{{ele.name}}</option>
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <label>Quantity</label>
+                    <input type="number" id="qty" name="qty" [(ngModel)]="qty"/>
+                </div>
+
+<!--                    <label for="category">Product</label>-->
+<!--                    <input type="text" id="category" name="category" class="form-control rounded-pill" list="products"-->
+<!--                           [(ngModel)]="product.category" #category="ngModel"-->
+<!--                           [ngClass]="{ 'is-invalid': f.submitted && category.invalid }" required minlength="2" maxlength="32"/>-->
+<!--                    <datalist id="products">-->
+<!--                        <option *ngFor="let product of inventory" class="rounded-pill">{{product.name}}</option>-->
+<!--                    </datalist>-->
+<!--                </div>-->
+
+<!--                <div class="col-sm-4">-->
+<!--                    <label for="location">Quantity</label>-->
+<!--                    <input type="text" id="location" name="location" class="form-control rounded-pill" list="locations"-->
+<!--                           [(ngModel)]="product.qty" #location="ngModel" required/>-->
+<!--                    <datalist id="locations">-->
+<!--                        <option *ngFor="let loc of inventory" class="rounded-pill">{{loc.location}}</option>-->
+<!--                    </datalist>-->
+<!--                </div>-->
+
+                <div class="col-sm-3">
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-success create-button" [disabled]="!f.form.valid">ADD <i class="fa fa-plus-circle"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+

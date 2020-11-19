@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BundleService} from '../services/bundle.service';
 import {Bundle} from './models/bundle';
-import {Piece} from '../add-bundle-piece/model/piece';
 import {Router} from '@angular/router';
 
 @Component({
@@ -20,12 +19,15 @@ export class CreateBundleComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getBundles();
+        this.getBundles();        
     }
 
     getBundles() {
         this.bundleService.getBundles().subscribe(
             (res) => {
+                this.bundles = res;
+                console.log(res);
+
                 this.bundles = res;
             }, error => {
                 alert('Error getting bundles!');
@@ -40,7 +42,7 @@ export class CreateBundleComponent implements OnInit {
                     alert('Product already exists');
                 } else {
                     this.bundles.push(res);
-                    this.router.navigate(['/bundles']);
+                    this.router.navigate(['/bundles/add' + res.id + '/add']);
                 }
             },
             (error) => {

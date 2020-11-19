@@ -15,6 +15,7 @@ export class InventoryComponent implements OnInit {
     selectedProduct: Product;
     display: boolean;
     quantity = 1;
+    inputQty = 1 ;
 
 
     constructor(private productService: ProductService) {
@@ -36,29 +37,35 @@ export class InventoryComponent implements OnInit {
 
 
     increaseQuantity(id: number, qty: number){
-        this.productService.increaseQuantity(id, qty).subscribe(
-            res => {
-                this.selectedProduct.qty += qty;
-                window.location.reload();
-            },
-            error => {
-                alert('An error has occurred.');
-            }
-        );
+        if(qty <= 0){
+            alert("Please input a number that's bigger.");
+        }else{
+            this.productService.increaseQuantity(id, qty).subscribe(
+                res => {
+                    this.selectedProduct.qty += qty;
+                    window.location.reload();
+                },
+                error => {
+                    alert('An error has occurred.');
+                }
+            );
+        }
     }
 
     decreaseQuantity(id: number, qty: number){
-        this.productService.decreaseQuantity(id, qty).subscribe(
-            res => {
-                if (res.qty - qty >= 0){
+        if(qty <= 0){
+            alert("Please input a number that's bigger.");
+        }else{        
+            this.productService.decreaseQuantity(id, qty).subscribe(
+                res => {
                     this.selectedProduct.qty -= qty;
                     window.location.reload();
+                },
+                error => {
+                    alert('An error has occurred.');
                 }
-            },
-            error => {
-                alert('An error has occurred.');
-            }
-        );
+            );
+        }
     }
 
     getProductById(id: number) {

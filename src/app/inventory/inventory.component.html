@@ -49,14 +49,14 @@
                                     <div class="row input-group mb-3">
                                         <div class="input-group-prepend">
                                             <button class="btn minus"
-                                                    (click)="decreaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                                    (click)="decreaseQuantity(this.selectedProduct.id, this.inputQty)"><i
                                                     class="fa fa-minus-circle"></i></button>
                                         </div>
                                         <label for="qty2"></label>
-                                        <input type="number" id="qty2" class="form-control" placeholder="Update Quantity" [(ngModel)]="selectedProduct.qty">
+                                        <input type="number" id="qty2" class="form-control" placeholder="Update Quantity" [(ngModel)]="inputQty">
                                         <div class="input-group-append">
                                             <button class="btn plus"
-                                                    (click)="increaseQuantity(this.selectedProduct.id, this.selectedProduct.qty)"><i
+                                                    (click)="increaseQuantity(this.selectedProduct.id, this.inputQty)"><i
                                                     class="fa fa-plus-circle"></i></button>
                                         </div>
                                     </div>
