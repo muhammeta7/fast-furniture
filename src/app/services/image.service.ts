@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 })
 export class ImageService {
 
-    private BASE_URL = 'http://fastfurniture-api.herokuapp/api/images';
+    private BASE_URL = 'https://fastfurniture-api.herokuapp/api/images';
 
     constructor(private httpClient: HttpClient) {
     }
