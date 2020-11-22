@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
     providedIn: 'root'
 })
 export class ProductService {
-    private BASE_URL = 'http://fastfurniture-api.herokuapp/api/products';
+    private BASE_URL = 'https://fastfurniture-api.herokuapp/api/products';
 
     constructor(private http: HttpClient) {}
 
