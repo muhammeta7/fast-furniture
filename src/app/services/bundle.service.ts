@@ -8,7 +8,7 @@ import {observableToBeFn} from 'rxjs/internal/testing/TestScheduler';
     providedIn: 'root'
 })
 export class BundleService {
-    private BASE_URL = 'https://fastfurniture-api.herokuapp/api/bundle';
+    private BASE_URL = 'https://ff-backend-api.herokuapp/api/bundle';
 
     constructor(private http: HttpClient) {
     }
