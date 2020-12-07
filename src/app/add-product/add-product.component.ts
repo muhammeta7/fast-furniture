@@ -44,7 +44,7 @@ export class AddProductComponent implements OnInit {
                     alert('Product already exists');
                 } else {
                     this.inventory.push(res);
-                    this.router.navigate(['/products']);
+                    this.router.navigate(['/add']);
                 }
             },
             (error) => {
