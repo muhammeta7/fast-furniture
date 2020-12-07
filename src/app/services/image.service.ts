@@ -18,6 +18,6 @@ export class ImageService {
     }
 
     getImageByName(name: string): any {
-        return this.httpClient.get(this.BASE_URL + '/' + name);
+        return this.httpClient.get(this.BASE_URL +  name);
     }
 }
