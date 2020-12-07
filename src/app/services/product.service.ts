@@ -16,7 +16,7 @@ export class ProductService {
     }
 
     getProductById(id: number): Observable<Product>{
-        return this.http.get<Product>(this.BASE_URL + '/' + id);
+        return this.http.get<Product>(this.BASE_URL +  id);
     }
 
     getProducts(): Observable<Product[]> {
@@ -24,15 +24,15 @@ export class ProductService {
     }
 
     getCategories(): Observable<string[]>{
-        return this.http.get<string[]>(this.BASE_URL + '/category/index');
+        return this.http.get<string[]>(this.BASE_URL + 'category/index');
     }
 
     getLocations(): Observable<string[]>{
-        return this.http.get<string[]>(this.BASE_URL + '/location/index');
+        return this.http.get<string[]>(this.BASE_URL + 'location/index');
     }
 
     increaseQuantity(id: number, qty: number){
-        const url = `${this.BASE_URL}/${id}/increase/qty`;
+        const url = `${this.BASE_URL}${id}increase/qty`;
         const param = new FormData();
         // @ts-ignore
         param.append('qty', qty);
