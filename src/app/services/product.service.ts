@@ -32,7 +32,7 @@ export class ProductService {
     }
 
     increaseQuantity(id: number, qty: number){
-        const url = `${this.BASE_URL}${id}increase/qty`;
+        const url = `${this.BASE_URL}${id}/increase/qty`;
         const param = new FormData();
         // @ts-ignore
         param.append('qty', qty);
